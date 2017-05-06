@@ -369,16 +369,14 @@ html { font-size: 62.5%; }
               font-size: 2.4rem;
               color: $color_grey;
               font-family: $font_avenir_bold;
-              margin: 0 0.8rem;
+              margin: 0 0.3rem;
               cursor: pointer;
               transition: $transition;
             }
-            span { color: $color_blue; }
 
-            button:hover {
+            span {
               color: $color_blue;
-              transition: $transition;
-              opacity: 0.6;
+              margin-right: 2rem;
             }
 
             button {
@@ -387,10 +385,12 @@ html { font-size: 62.5%; }
 
               &:not(.is-active) { @mixin selection; }
 
-              &.is-active {
+              &.is-active,
+              &:hover {
                 color: $color_blue;
                 transition: $transition;
               }
+              &:hover { opacity: 0.6; }
             }
           }
         }
