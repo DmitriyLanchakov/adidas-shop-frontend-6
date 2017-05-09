@@ -1,10 +1,13 @@
 import React from 'react';
+import { SearchInput, SearchButton, SearchIconSearch } from './style';
 
 const FormSearch = () => {
   return (
     <form action="/" method="GET" role="search">
-      <button type="submit"><span className="icon-search">&nbsp;</span></button>
-      <input type="search" />
+      <SearchButton type="submit">
+        <SearchIconSearch />
+      </SearchButton>
+      <SearchInput type="search" />
     </form>
   );
 };

@@ -5,14 +5,13 @@
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'arrow-body-style': [2, 'always'],
     'react/forbid-prop-types': [2, { "forbid": ['any'] }],
-    "jsx-a11y/img-has-alt": [0],
   },
   "env": {
     "node": true,
     "browser": true,
     "jasmine": true
   },
-  "plugins": ["compat", 'jsx-a11y'],
+  "plugins": ["compat"],
   "settings": {
     "targets": ['chrome >= 50', 'firefox', 'edge', 'ie >= 9', 'safari >= 9'],
     "coverage": false,

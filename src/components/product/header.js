@@ -1,5 +1,6 @@
 import React from 'react';
 import { string } from 'prop-types';
+import Label from '../../components/label';
 
 const ItemHeader = ({ name }) => {
   return (
@@ -14,7 +15,9 @@ const ItemHeader = ({ name }) => {
           <button role="button" type="button" style={{ backgroundColor: 'green' }}>&nbsp;</button>
           <button role="button" type="button" style={{ backgroundColor: 'yellow' }}>&nbsp;</button>
         </div>
-        <div className="b-item__badge m-bage__sale"><span>sale</span></div>
+        <div className="b-item__badge m-bage__sale">
+          <Label name="save" />
+        </div>
       </div>
     </div>
   );

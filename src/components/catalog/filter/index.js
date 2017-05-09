@@ -1,27 +1,28 @@
 import React from 'react';
+import { FilterElement, FilterButton } from './style';
 
 const CatalogFilter = () => {
   return (
     <form action="#" method="get" role="search">
       <div className="b-filter b-flex is-row is-start">
-        <div className="b-filter__element">
+        <FilterElement>
           <button aria-label="Тогл фильтра" role="button" type="button" className="bg-icon_filter">
             <span className="icon-filter">&nbsp;</span>
           </button>
-        </div>
+        </FilterElement>
         <div className="b-flex is-row is-start b-filterArray is-show">
-          <div className="b-filter__element" role="listbox">
-            <button type="button" name="button" className="is-active">women</button>
-            <button type="button" name="button">men</button>
-          </div>
+          <FilterElement role="listbox">
+            <FilterButton role="button" active >women</FilterButton>
+            <FilterButton role="button">men</FilterButton>
+          </FilterElement>
           <div className="b-filter__element" role="listbox">
             <span>size </span>
-            <button type="button" name="button">37</button>
-            <button type="button" name="button">38</button>
-            <button type="button" name="button">39</button>
-            <button type="button" name="button" className="is-active">40</button>
-            <button type="button" name="button">41</button>
-            <button type="button" name="button">42</button>
+            <FilterButton type="button">37</FilterButton>
+            <FilterButton type="button">38</FilterButton>
+            <FilterButton type="button">39</FilterButton>
+            <FilterButton type="button" active>40</FilterButton>
+            <FilterButton type="button">41</FilterButton>
+            <FilterButton type="button">42</FilterButton>
           </div>
         </div>
       </div>

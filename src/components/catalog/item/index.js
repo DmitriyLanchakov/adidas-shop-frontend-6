@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import ProductLabel from '../../label';
 import itemPhoto from '../../../assets/img/bitmap.jpg';
 
 const CatalogItem = () => {
   return (
-    <div className="col-s-6 col-m-4 col-l-4">
+    <div className="col-s-6 col-m-4 col-l-3">
       <article className="b-catalog__item" role="treeitem">
         <ProductLabel name="sale" />
         <div className="b-item__img">

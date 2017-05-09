@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../logo';
 import Navbar from '../navbar';
 import FormSearch from '../forms/search';
@@ -17,13 +18,12 @@ class Sidebar extends Component {
     });
   }
   render() {
-    const navbarState = this.state.navbarOpen ? 'block' : 'none';
+    const { navbarOpen } = this.state;
+    const navbarState = navbarOpen ? 'block' : 'none';
     return (
       <div className="b-sidebar m-text-center">
         <div className="b-sidebar__logo">
-          <a href="/">
-            <Logo name="logo" />
-          </a>
+          <Link to="/"> <Logo name="logo" /> </Link>
         </div>
         <div className="is-mobile">
           <button
