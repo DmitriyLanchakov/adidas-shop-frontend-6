@@ -1,5 +1,5 @@
 import React from 'react';
-import { element } from 'prop-types';
+import { array } from 'prop-types';
 import Sidebar from '../sidebar';
 
 
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: element.isRequired,
+  children: array.isRequired,
 };
 
 export default Layout;

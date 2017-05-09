@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import ProductLabel from '../../label';
 import itemPhoto from '../../../assets/img/bitmap.jpg';
 
@@ -14,7 +15,7 @@ const CatalogItem = () => {
           />
         </div>
         <footer className="b-item__price">
-          <a href="/item.html" role="link" className="with-type__money is_before">170</a>
+          <Link to="/item" className="with-type__money is_before">170</Link>
         </footer>
       </article>
     </div>

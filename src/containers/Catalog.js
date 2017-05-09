@@ -1,10 +1,9 @@
 import React from 'react';
-import Layout from '../components/layout';
 import { CatalogFilter, CatalogItem } from '../components/catalog';
 
 const Home = () => {
   return (
-    <Layout>
+    <div>
       <header>
         <CatalogFilter />
       </header>
@@ -26,7 +25,7 @@ const Home = () => {
           <CatalogItem />
         </div>
       </main>
-    </Layout>
+    </div>
   );
 };
 
