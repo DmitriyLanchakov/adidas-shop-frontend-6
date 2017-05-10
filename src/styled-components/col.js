@@ -2,11 +2,14 @@
 import styled from 'styled-components';
 
 function checkWidth(size, media) {
+  let $size = size;
+
   if (media !== undefined && media === 'xs' && !size) {
-    console.warn('Не задан `col.xs`');
+    console.warn('Не задан `xs` у компонента <Col />');
+    $size = '12';
   }
 
-  const percent = `${100 / (12 / size)}%`;
+  const percent = `${100 / (12 / $size)}%`;
 
   return {
     'flex-basis': percent,
@@ -18,11 +21,15 @@ const Col = styled.div`
   ${props => checkWidth(props.xs, 'xs')}
 
   @media (min-width: ${props => props.theme.media.sm}) {
-    ${props => checkWidth(props.sm)}
+    ${props => props.sm && checkWidth(props.sm)}
+  }
+
+  @media (min-width: ${props => props.theme.media.md}) {
+    ${props => props.md && checkWidth(props.md)}
   }
 
   @media (min-width: ${props => props.theme.media.lg}) {
-    ${props => checkWidth(props.lg)}
+    ${props => props.lg && checkWidth(props.lg)}
   }
 `;
 
