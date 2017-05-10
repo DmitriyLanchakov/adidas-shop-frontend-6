@@ -16,36 +16,13 @@ const Home = () => {
           flow="row wrap" justify="flex-start"
           role="group" className="m-text-center"
         >
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
-          <Col xs={12} sm={6} md={4} lg={3} >
-            <CatalogItem />
-          </Col>
+          {[...Array(15)].map(() => {
+            return (
+              <Col xs={12} sm={6} md={4} lg={3} >
+                <CatalogItem />
+              </Col>
+            );
+          })}
         </Flexbox>
       </main>
     </div>
