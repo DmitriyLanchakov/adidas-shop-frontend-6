@@ -31,6 +31,14 @@ const Col = styled.div`
   @media (min-width: ${props => props.theme.media.lg}) {
     ${props => props.lg && checkWidth(props.lg)}
   }
+
+  @media (
+      ${props => props.altMin && `min-width: ${props.altMin}`}
+    ) and (
+      ${props => props.altMax && `max-width: ${props.altMax}`}
+    ) {
+    ${props => props.altCol && checkWidth(props.altCol)}
+  }
 `;
 
 export default Col;
