@@ -11,7 +11,10 @@ const CatalogFilter = () => {
             <span className="icon-filter">&nbsp;</span>
           </button>
         </FilterElement>
-        <div className="b-flex is-row is-start b-filterArray is-show">
+        <Flexbox
+          flow="row wrap" justify="flex-start"
+          className="b-filterArray is-show"
+        >
           <FilterElement role="listbox">
             <FilterButton role="button" type="button" active >women</FilterButton>
             <FilterButton role="button" type="button">men</FilterButton>
@@ -25,7 +28,7 @@ const CatalogFilter = () => {
             <FilterButton role="button" type="button">41</FilterButton>
             <FilterButton role="button" type="button">42</FilterButton>
           </div>
-        </div>
+        </Flexbox>
       </Flexbox>
     </form>
   );
