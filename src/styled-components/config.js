@@ -1,4 +1,4 @@
-const StyleConfig = {
+export default {
   fonts: {
     ariabold: 'AriaNextBold',
     andale: 'AndaleMono',
@@ -8,6 +8,7 @@ const StyleConfig = {
     blue: '#4d42f8',
     grey: '#d6d6d6',
     black: '#0e0e0e',
+    red: '#ff5c5c',
     light_grey: '#e7e7e7',
     ligth_black: '#3a3a3a',
     searchInput: '#3a3a3a',
@@ -23,5 +24,3 @@ const StyleConfig = {
   },
   transition: '0.6s',
 };
-
-export default StyleConfig;

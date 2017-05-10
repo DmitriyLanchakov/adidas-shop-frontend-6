@@ -19,9 +19,7 @@ const CatalogItem = () => {
         >170</Flexbox>
 
         <Flexbox flow="row wrap" justify="start" className="m-pos_relative">
-          <div className="b-info m-default">
-            <ProductLabel name="sale" />
-          </div>
+          <div className="b-info m-default">sale</div>
         </Flexbox>
 
         <Flexbox flow="row wrap" justify="center">

@@ -14,6 +14,18 @@ export const ColorButton = styled.button`
   ${props => props.active && 'width: 2.4rem; height: 2.4rem; top: 5px'}
 `;
 
+export const TitleLayout = styled.div`
+  max-width: 30rem;
+  line-height: 1;
+  position: relative;
+
+  @media (max-width: ${props => props.theme.media.sm}) {
+    max-width: none;
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+`;
 export const Title = styled.h1`
   margin: 0;
   font-size: 6.4rem;

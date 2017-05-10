@@ -1,5 +1,6 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
+import iconFromFilter from '../../../assets/img/filter.png';
 
 export const FilterElement = styled.div`
   text-transform: uppercase;
@@ -10,7 +11,12 @@ export const FilterElement = styled.div`
   cursor: pointer;
   margin-right: 2rem;
   transition: ${props => props.theme.colors.transition};
+  span {
+    margin-right: 1rem;
+    color: ${props => props.theme.colors.blue};
+  }
 `;
+
 export const FilterButton = styled.button`
   color: ${props => props.active
     ? props.theme.colors.blue
@@ -22,9 +28,33 @@ export const FilterButton = styled.button`
   background-color: red;
   transition: ${props => props.theme.colors.transition};
   text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 1.1rem 0;
 
   &:hover {
     transition: ${props => props.theme.colors.transition};
     color: ${props => props.theme.colors.blue};
+  }
+`;
+
+export const FilterIcon = styled.span`
+  background: url(${iconFromFilter}) center center no-repeat;
+  background-size: cover;
+  width: 4rem;
+  height: 3.3rem;
+  display: inline-block;
+`;
+
+export const FilterToggleButton = styled.button`
+  padding: 1.1rem 0.8rem;
+  margin-right: 0;
+  background: transparent;
+  border: 0;
+  background-color: #ebebeb;
+
+  @media (max-width: ${props => props.theme.media.sm}) {
+    display: none;
   }
 `;

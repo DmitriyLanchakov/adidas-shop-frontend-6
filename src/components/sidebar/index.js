@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  SidebarLogoLayout, MenuIcon,
+  MobileTogglerNav, NavbarLayout,
+  SearchLayout,
+} from './styled-component';
 import Logo from '../logo';
 import Navbar from '../navbar';
 import SearchForm from '../searchForm';
@@ -22,23 +27,23 @@ class Sidebar extends Component {
     const navbarState = navbarOpen ? 'block' : 'none';
     return (
       <div className="b-sidebar m-text-center">
-        <div className="b-sidebar__logo">
+        <SidebarLogoLayout>
           <Link to="/"> <Logo name="logo" /> </Link>
-        </div>
-        <div className="is-mobile">
+        </SidebarLogoLayout>
+        <MobileTogglerNav>
           <button
             aria-label="Открыть меню"
             onClick={this.toggleNavbar}
           >
-            <span className="menu icon" />
+            <MenuIcon />
           </button>
-        </div>
-        <div className="b-sectionNav" style={{ display: navbarState }}>
-          <div className="b-sidebar__search">
+        </MobileTogglerNav>
+        <NavbarLayout style={{ display: navbarState }}>
+          <SearchLayout>
             <SearchForm />
-          </div>
+          </SearchLayout>
           <Navbar />
-        </div>
+        </NavbarLayout>
       </div>
     );
   }

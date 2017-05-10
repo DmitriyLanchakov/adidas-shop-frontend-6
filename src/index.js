@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Layout from './components/layout';
-import StyleConfig from './styled-components';
+import StyleConfig from './styled-components/config';
 
 
 import Catalog from './containers/Catalog';
