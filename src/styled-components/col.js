@@ -32,11 +32,11 @@ const Col = styled.div`
     ${props => props.lg && checkWidth(props.lg)}
   }
 
-  @media (
-      ${props => props.altMin && `min-width: ${props.altMin}`}
-    ) and (
-      ${props => props.altMax && `max-width: ${props.altMax}`}
-    ) {
+  @media ${props => `
+    (${props.altMin && `min-width: ${props.altMin}`})
+    and
+    (${props.altMax && `max-width: ${props.altMax}`})
+  `} {
     ${props => props.altCol && checkWidth(props.altCol)}
   }
 `;

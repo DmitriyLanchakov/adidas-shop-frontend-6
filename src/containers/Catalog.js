@@ -13,9 +13,7 @@ const Home = () => {
         <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
           <Col
             xs={12} sm={6} md={4} lg={2}
-            altMin={'400px'}
-            altMax={'900px'}
-            altCol={10}
+            altMin={'400px'} altMax={'900px'} altCol={10}
           >1</Col>
           <Col xs={12} sm={6} md={4} lg={2} >2</Col>
           <Col xs={12} sm={6} md={4} lg={2} >3</Col>
