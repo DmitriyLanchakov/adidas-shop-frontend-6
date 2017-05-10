@@ -5,7 +5,7 @@ import itemPhoto from '../../../assets/img/bitmap.jpg';
 
 const CatalogItem = () => {
   return (
-    <div className="col-s-6 col-m-4 col-l-3">
+    <div role="listitem">
       <article className="b-catalog__item" role="treeitem">
         <ProductLabel name="sale" />
         <div className="b-item__img">

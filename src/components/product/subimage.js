@@ -1,25 +1,27 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { bool } from 'prop-types';
+import { SubImage } from './styled-component';
 import img from '../../assets/img/bitmap-copy.png';
 
-const SubImages = ({ cls }) => {
+const SubImages = ({ active }) => {
+  console.log(active);
   return (
-    <div className={`b-subImage ${cls}`}>
+    <SubImage active={active}>
       <img
         src={img}
         role="presentation"
         alt="картинка" draggable="false"
       />
-    </div>
+    </SubImage>
   );
 };
 
 SubImages.propTypes = {
-  cls: string,
+  active: bool,
 };
 
 SubImages.defaultProps = {
-  cls: '',
+  active: false,
 };
 
 export default SubImages;

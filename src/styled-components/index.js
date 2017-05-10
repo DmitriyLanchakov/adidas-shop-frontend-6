@@ -8,6 +8,7 @@ const StyleConfig = {
     blue: '#4d42f8',
     grey: '#d6d6d6',
     black: '#0e0e0e',
+    light_grey: '#e7e7e7',
     ligth_black: '#3a3a3a',
     searchInput: '#3a3a3a',
     searchBorder: '#373737',
@@ -18,7 +19,7 @@ const StyleConfig = {
     xs: '468px',
     sm: '768px',
     md: '970px',
-    lg: '1170px',
+    lg: '1300px',
   },
   transition: '0.6s',
 };

@@ -8,7 +8,7 @@ export const NavbarLink = styled(Link)`
   transition: ${props => props.theme.transition};
   margin: 1.5rem 0;
   color: white;
-  opacity: 0.4;
+  opacity: 0.2;
   display: block;
   position: relative;
   font-size: 2.4rem;
@@ -28,7 +28,8 @@ export const NavbarLink = styled(Link)`
       border-right: .3rem solid currentColor;
       transform: rotate(-40deg);
     }
-  `}
+  `};
+
   ${props => props.subitem ? `
     &:hover {
       opacity: 1;
@@ -36,12 +37,14 @@ export const NavbarLink = styled(Link)`
     }
   ` : `
     font-family: ${props.theme.fonts.ariabold};
-  `}
+  `};
+
   &:hover {
     opacity: 1;
     transition: ${props => props.theme.transition};
-  }
-  ${props => props.active && 'opacity: 1;'}
+  };
+
+  ${props => props.active && 'opacity: 1;'};
 `;
 
 export const NavbarLayout = styled.nav`

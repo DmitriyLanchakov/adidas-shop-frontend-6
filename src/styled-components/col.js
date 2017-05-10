@@ -5,7 +5,7 @@ function checkWidth(size, media) {
   let $size = size;
 
   if (media !== undefined && media === 'xs' && !size) {
-    console.warn('Не задан `xs` у компонента <Col />');
+    console.warn('The `xs` is not specified for the <Col /> component');
     $size = 12;
   }
 

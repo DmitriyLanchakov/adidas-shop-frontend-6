@@ -21,3 +21,25 @@ export const Title = styled.h1`
   color: ${props => props.theme.colors.ligth_black};
   font-family: ${props => props.theme.fonts.ariabold};
 `;
+
+export const Badge = styled.div`
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: ${props => props.theme.fonts.ariabold};
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: #ff5c5c;
+  margin-left: 3rem;
+`;
+
+export const SubImage = styled.div`
+  flex-basis: 15%;
+  position: relative;
+  max-width: 17rem;
+  max-height: 17rem;
+  overflow: hidden;
+  border: 0.5rem solid transparent;
+  border-color: ${props => props.active ? '#e7e7e7' : ''};
+
+  img { width: 100%; }
+`;

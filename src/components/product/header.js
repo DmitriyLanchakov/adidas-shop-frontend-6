@@ -1,6 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { ColorButton, Title } from './styled-component';
+import { ColorButton, Title, Badge } from './styled-component';
+import Flexbox from '../../styled-components/flexbox';
 import Label from '../../components/label';
 
 const ItemHeader = ({ name }) => {
@@ -9,17 +10,15 @@ const ItemHeader = ({ name }) => {
       <div className="b-item__h m-pos_relative">
         <Title role="heading">{name}</Title>
       </div>
-      <div className="b-item__more b-flex is-end m-pos_relative">
-        <div className="b-item__color">
-          <ColorButton role="button" type="button" active color="red" />
+      <Flexbox justify="flex-end" className="b-item__more m-pos_relative">
+        <div>
+          <ColorButton role="button" type="button" color="red" active />
           <ColorButton role="button" type="button" color="green" />
           <ColorButton role="button" type="button" color="yellow" />
           <ColorButton role="button" type="button" color="#4d87ca" />
         </div>
-        <div className="b-item__badge m-bage__sale">
-          <Label name="save" />
-        </div>
-      </div>
+        <Badge><Label name="save" /></Badge>
+      </Flexbox>
     </div>
   );
 };

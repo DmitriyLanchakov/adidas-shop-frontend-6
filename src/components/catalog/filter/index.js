@@ -1,10 +1,11 @@
 import React from 'react';
+import Flexbox from '../../../styled-components/flexbox';
 import { FilterElement, FilterButton } from './styled-component';
 
 const CatalogFilter = () => {
   return (
     <form action="#" method="get" role="search">
-      <div className="b-filter b-flex is-row is-start">
+      <Flexbox flow="row wrap" justify="flex-start" className="b-filter">
         <FilterElement>
           <button aria-label="Тогл фильтра" role="button" type="button" className="bg-icon_filter">
             <span className="icon-filter">&nbsp;</span>
@@ -25,7 +26,7 @@ const CatalogFilter = () => {
             <FilterButton role="button" type="button">42</FilterButton>
           </div>
         </div>
-      </div>
+      </Flexbox>
     </form>
   );
 };
