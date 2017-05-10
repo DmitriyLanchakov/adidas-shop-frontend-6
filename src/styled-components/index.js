@@ -1,7 +1,7 @@
 const StyleConfig = {
   fonts: {
     ariabold: 'AriaNextBold',
-    andela: 'AndaleMono',
+    andale: 'AndaleMono',
     avenir: 'AriaNextRegular',
   },
   colors: {

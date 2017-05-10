@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterElement, FilterButton } from './style';
+import { FilterElement, FilterButton } from './styled-component';
 
 const CatalogFilter = () => {
   return (
@@ -12,17 +12,17 @@ const CatalogFilter = () => {
         </FilterElement>
         <div className="b-flex is-row is-start b-filterArray is-show">
           <FilterElement role="listbox">
-            <FilterButton role="button" active >women</FilterButton>
-            <FilterButton role="button">men</FilterButton>
+            <FilterButton role="button" type="button" active >women</FilterButton>
+            <FilterButton role="button" type="button">men</FilterButton>
           </FilterElement>
           <div className="b-filter__element" role="listbox">
             <span>size </span>
-            <FilterButton type="button">37</FilterButton>
-            <FilterButton type="button">38</FilterButton>
-            <FilterButton type="button">39</FilterButton>
-            <FilterButton type="button" active>40</FilterButton>
-            <FilterButton type="button">41</FilterButton>
-            <FilterButton type="button">42</FilterButton>
+            <FilterButton role="button" type="button">37</FilterButton>
+            <FilterButton role="button" type="button">38</FilterButton>
+            <FilterButton role="button" type="button">39</FilterButton>
+            <FilterButton role="button" type="button" active>40</FilterButton>
+            <FilterButton role="button" type="button">41</FilterButton>
+            <FilterButton role="button" type="button">42</FilterButton>
           </div>
         </div>
       </div>

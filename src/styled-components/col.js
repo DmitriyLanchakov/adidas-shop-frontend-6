@@ -6,7 +6,7 @@ function checkWidth(size, media) {
 
   if (media !== undefined && media === 'xs' && !size) {
     console.warn('Не задан `xs` у компонента <Col />');
-    $size = '12';
+    $size = 12;
   }
 
   const percent = `${100 / (12 / $size)}%`;

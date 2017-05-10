@@ -1,29 +1,19 @@
 import React from 'react';
+import { NavbarLayout, NavbarLink } from './styled-component';
 
 const Navbar = () => {
   return (
-    <ul role="navigation" aria-label="меню">
-      <li role="menuitem">
-        <a href="/" className="has-subnav is-active">sports</a>
-        <ul className="is-active">
-          <li role="menuitem">
-            <a href="/" className="is-active">shoes</a>
-          </li>
-          <li role="menuitem">
-            <a href="/">clothing</a>
-          </li>
-          <li role="menuitem">
-            <a href="/">accesories</a>
-          </li>
-        </ul>
-      </li>
-      <li role="menuitem">
-        <a href="/">brand</a>
-      </li>
-      <li role="menuitem">
-        <a href="/">micoach</a>
-      </li>
-    </ul>
+    <NavbarLayout role="navigation" aria-label="меню">
+      <NavbarLink to="/" active hassubnav>SPORTS</NavbarLink>
+
+      <NavbarLayout role="navigation" aria-label="меню">
+        <NavbarLink subitem role="menuitem" to="/">shoes</NavbarLink>
+        <NavbarLink subitem role="menuitem" to="/">clothing</NavbarLink>
+      </NavbarLayout>
+
+      <NavbarLink role="menuitem" to="/">brand</NavbarLink>
+      <NavbarLink role="menuitem" to="/">micoach</NavbarLink>
+    </NavbarLayout>
   );
 };
 

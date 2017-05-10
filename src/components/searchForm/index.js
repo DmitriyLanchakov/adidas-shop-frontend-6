@@ -1,7 +1,9 @@
 import React from 'react';
-import { SearchInput, SearchButton, SearchIconSearch } from './style';
+import {
+  SearchInput, SearchButton, SearchIconSearch,
+} from './styled-component';
 
-const FormSearch = () => {
+const SearchForm = () => {
   return (
     <form action="/" method="GET" role="search">
       <SearchButton type="submit">
@@ -12,4 +14,4 @@ const FormSearch = () => {
   );
 };
 
-export default FormSearch;
+export default SearchForm;

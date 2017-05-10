@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../logo';
 import Navbar from '../navbar';
-import FormSearch from '../forms/search';
+import SearchForm from '../searchForm';
 
 class Sidebar extends Component {
   constructor() {
@@ -35,11 +35,9 @@ class Sidebar extends Component {
         </div>
         <div className="b-sectionNav" style={{ display: navbarState }}>
           <div className="b-sidebar__search">
-            <FormSearch />
+            <SearchForm />
           </div>
-          <nav className="b-sidebar__navbar">
-            <Navbar />
-          </nav>
+          <Navbar />
         </div>
       </div>
     );
