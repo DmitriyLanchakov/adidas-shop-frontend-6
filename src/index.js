@@ -6,10 +6,9 @@ import 'normalize.css';
 import Layout from './components/layout';
 import StyleConfig from './styled-components/config';
 
-
 import Catalog from './containers/Catalog';
 import CatalogItem from './containers/CatalogItem';
-import './assets/css/default.css';
+import './styled-components/global';
 
 render(
   <BrowserRouter>

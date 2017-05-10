@@ -9,7 +9,7 @@ const ItemHeader = ({ name }) => {
       <TitleLayout>
         <Title role="heading">{name}</Title>
       </TitleLayout>
-      <Flexbox justify="flex-end" className="b-item__more m-pos_relative">
+      <Flexbox justify="flex-end" className="b-item__more">
         <div>
           <ColorButton role="button" type="button" color="red" active />
           <ColorButton role="button" type="button" color="green" />

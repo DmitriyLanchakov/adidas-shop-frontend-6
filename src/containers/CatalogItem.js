@@ -1,35 +1,44 @@
 import React from 'react';
 import Flexbox from '../styled-components/flexbox';
+import {
+  ProductDescription, ProductImage, ProductLayout,
+  ProductPrice, ProductLabel, ProductBtnMoreImage, ProductBtnMoreText,
+  ProductByNow,
+} from '../styled-components/products/item';
 import ProductHeader from '../components/product/header';
-import ProductLabel from '../components/label';
 import SubImage from '../components/product/subimage';
 import productimg from '../assets/img/bitmap-copy.png';
 
 const CatalogItem = () => {
   return (
     <main role="main" aria-label="Основная часть">
-      <div className="b-item">
+      <ProductLayout>
 
-        <ProductHeader name="ultra boots" />
+        <div style={{ position: 'relative' }}>
+          <ProductHeader name="ultra boots" />
 
-        <Flexbox
-          flow="row wrap" justify="flex-end"
-          role="math"
-          className="b-price with-type__money m-pos_relative is_before"
-        >170</Flexbox>
+          <Flexbox
+            flow="row wrap" justify="flex-end"
+            role="math"
+            className="b-price with-type__money m-pos_relative is_before"
+          >
+            <ProductPrice money="before">170</ProductPrice>
+          </Flexbox>
 
-        <Flexbox flow="row wrap" justify="start" className="m-pos_relative">
-          <div className="b-info m-default">sale</div>
-        </Flexbox>
+          <Flexbox flow="row wrap" justify="start">
+            <ProductLabel default>sale</ProductLabel>
+          </Flexbox>
+
+        </div>
 
         <Flexbox flow="row wrap" justify="center">
-          <div className="b-item__image">
+          <ProductImage>
             <img
               src={productimg}
               role="presentation"
               alt="картинка" draggable="false"
             />
-          </div>
+          </ProductImage>
         </Flexbox>
 
         <Flexbox flow="row wrap" justify="flex-start" className="b-subimg">
@@ -37,24 +46,21 @@ const CatalogItem = () => {
           <SubImage />
           <SubImage />
           <SubImage />
-          <div className="b-subImage">
-            <div className="b-more_div">
-              <span className="b-more">&nbsp;</span>
-            </div>
+          <div style={{ position: 'relative', flexBasis: '10%' }}>
+            <ProductBtnMoreImage><span /></ProductBtnMoreImage>
           </div>
-          <div className="b-subImage col-s-4 col-m-1">
-            <div className="b-link">see more photos</div>
+          <div style={{ position: 'relative', flexBasis: '15%' }}>
+            <ProductBtnMoreText>see more photos</ProductBtnMoreText>
           </div>
         </Flexbox>
-
-        <div className="b-description">
+        <ProductDescription>
           <p><b>Adidas</b> is a German multinational corporation, headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories.</p>
-        </div>
-      </div>
+        </ProductDescription>
+      </ProductLayout>
 
-      <div className="b-btn">
+      <ProductByNow>
         <button type="button" aria-label="купить">buy now</button>
-      </div>
+      </ProductByNow>
     </main>
   );
 };

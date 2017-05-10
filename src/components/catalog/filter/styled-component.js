@@ -2,17 +2,20 @@
 import styled from 'styled-components';
 import iconFromFilter from '../../../assets/img/filter.png';
 
+export const FilterLayout = styled.form`
+  margin: 1rem 0 1rem 2.3rem;
+`;
+
 export const FilterElement = styled.div`
   text-transform: uppercase;
-  margin: 0 5rem 0 0;
   font-size: 2.4rem;
   font-family: ${props => props.theme.fonts.ariabold};
   margin: 0 0.3rem;
   cursor: pointer;
   margin-right: 2rem;
   transition: ${props => props.theme.colors.transition};
+
   span {
-    margin-right: 1rem;
     color: ${props => props.theme.colors.blue};
   }
 `;

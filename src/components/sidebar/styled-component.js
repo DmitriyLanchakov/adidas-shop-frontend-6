@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const SidebarLogoLayout = styled.div`
   margin: 3.1rem auto;
+  text-align: center;
   @media (max-width: ${props => props.theme.media.sm}) {
     display: inline-block;
     margin: 1rem 2rem;

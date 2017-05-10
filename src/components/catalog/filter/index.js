@@ -1,13 +1,14 @@
 import React from 'react';
 import Flexbox from '../../../styled-components/flexbox';
 import {
-  FilterElement, FilterButton, FilterIcon, FilterToggleButton,
+  FilterElement, FilterButton, FilterIcon,
+  FilterToggleButton, FilterLayout,
 } from './styled-component';
 
 const CatalogFilter = () => {
   return (
-    <form action="#" method="get" role="search">
-      <Flexbox flow="row wrap" justify="flex-start" className="b-filter">
+    <FilterLayout action="#" method="get" role="search">
+      <Flexbox flow="row wrap" justify="flex-start">
         <FilterElement>
           <FilterToggleButton aria-label="Тогл фильтра" role="button" type="button">
             <FilterIcon />
@@ -32,7 +33,7 @@ const CatalogFilter = () => {
           </FilterElement>
         </Flexbox>
       </Flexbox>
-    </form>
+    </FilterLayout>
   );
 };
 

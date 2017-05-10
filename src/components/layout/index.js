@@ -7,10 +7,8 @@ import Sidebar from '../sidebar';
 const Layout = ({ children }) => {
   return (
     <Flexbox flow="row nowrap" justify="space-between" stretch className="b-container">
-      <aside className="col-s-12"><Sidebar /></aside>
-      <section className="col-s-12">
-        {children}
-      </section>
+      <aside><Sidebar /></aside>
+      <section>{children}</section>
     </Flexbox>
   );
 };
