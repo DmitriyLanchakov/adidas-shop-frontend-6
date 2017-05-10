@@ -13,6 +13,12 @@ const StyleConfig = {
     navbarSubLink: '#3c3c3c',
     navbarHeadLink: '#303030',
   },
+  media: {
+    xs: '468px',
+    sm: '768px',
+    md: '970px',
+    lg: '1170px',
+  },
   transition: '0.6s',
 };
 
