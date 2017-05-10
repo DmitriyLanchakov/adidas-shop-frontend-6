@@ -8,6 +8,7 @@ const StyleConfig = {
     blue: '#4d42f8',
     grey: '#d6d6d6',
     black: '#0e0e0e',
+    ligth_black: '#3a3a3a',
     searchInput: '#3a3a3a',
     searchBorder: '#373737',
     navbarSubLink: '#3c3c3c',

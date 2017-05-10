@@ -1,19 +1,20 @@
 import React from 'react';
 import { string } from 'prop-types';
+import { ColorButton, Title } from './styled-component';
 import Label from '../../components/label';
 
 const ItemHeader = ({ name }) => {
   return (
     <div className="b-flex is-row is-between">
       <div className="b-item__h m-pos_relative">
-        <h1 role="heading" className="m-uppercase">{name}</h1>
+        <Title role="heading">{name}</Title>
       </div>
       <div className="b-item__more b-flex is-end m-pos_relative">
         <div className="b-item__color">
-          <button role="button" type="button" style={{ backgroundColor: '#4d87ca' }}>&nbsp;</button>
-          <button role="button" type="button" style={{ backgroundColor: '#e0e0e0' }}>&nbsp;</button>
-          <button role="button" type="button" style={{ backgroundColor: 'green' }}>&nbsp;</button>
-          <button role="button" type="button" style={{ backgroundColor: 'yellow' }}>&nbsp;</button>
+          <ColorButton role="button" type="button" active color="red" />
+          <ColorButton role="button" type="button" color="green" />
+          <ColorButton role="button" type="button" color="yellow" />
+          <ColorButton role="button" type="button" color="#4d87ca" />
         </div>
         <div className="b-item__badge m-bage__sale">
           <Label name="save" />

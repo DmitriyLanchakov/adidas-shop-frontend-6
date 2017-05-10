@@ -258,12 +258,6 @@ html { font-size: 62.5%; }
 
 .b-item__h { max-width: 30rem; line-height: 1; }
 
-.b-item__h h1 { margin: 0; font-size: 6.4rem; color: #3a3a3a; font-family: 'AriaNextBold'; }
-
-.b-item__more button { background: transparent; border: 0; cursor: pointer; border-radius: 100%; width: 1.8rem; height: 1.8rem; margin: 0 0.75rem; }
-
-.b-item__more button.is-active { width: 2.4rem; height: 2.4rem; }
-
 .b-item__badge { margin-left: 3rem; }
 
 .b-item__badge.m-bage__sale { color: #fff; font-size: 1.4rem; font-family: 'AriaNextBold'; text-transform: uppercase; padding: 1rem 2rem; background-color: #ff5c5c; }
