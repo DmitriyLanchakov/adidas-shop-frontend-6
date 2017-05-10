@@ -6,7 +6,7 @@ import Label from '../../components/label';
 
 const ItemHeader = ({ name }) => {
   return (
-    <div className="b-flex is-row is-between">
+    <Flexbox flow="row wrap" justify="space-between">
       <div className="b-item__h m-pos_relative">
         <Title role="heading">{name}</Title>
       </div>
@@ -19,7 +19,7 @@ const ItemHeader = ({ name }) => {
         </div>
         <Badge><Label name="save" /></Badge>
       </Flexbox>
-    </div>
+    </Flexbox>
   );
 };
 
