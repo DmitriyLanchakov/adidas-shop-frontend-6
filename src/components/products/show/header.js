@@ -1,9 +1,13 @@
+// @flow
 import React from 'react';
-import { string } from 'prop-types';
 import { Row } from 'react-flexbox-grid';
 import { ColorButton, TitleLayout, Title, Badge } from './styled-component';
 
-const ItemHeader = ({ name }) => {
+type Props = {
+  name: string,
+};
+
+const ItemHeader = ({ name }: Props) => {
   return (
     <Row between="xs">
       <TitleLayout>
@@ -20,10 +24,6 @@ const ItemHeader = ({ name }) => {
       </Row>
     </Row>
   );
-};
-
-ItemHeader.propTypes = {
-  name: string.isRequired,
 };
 
 export default ItemHeader;

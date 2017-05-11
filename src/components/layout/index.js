@@ -1,20 +1,20 @@
+// @flow
 import React from 'react';
-import { array } from 'prop-types';
+import type { Children } from 'react';
 import { Row } from 'react-flexbox-grid';
 import Sidebar from '../sidebar';
 
+type Props = {
+  children: Children,
+}
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: Props) => {
   return (
     <Row className="is-nowrap">
       <aside><Sidebar /></aside>
       <section>{children}</section>
     </Row>
   );
-};
-
-Layout.propTypes = {
-  children: array.isRequired,
 };
 
 export default Layout;

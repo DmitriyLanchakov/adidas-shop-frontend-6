@@ -1,9 +1,12 @@
+// @flow
 import React from 'react';
-import { bool } from 'prop-types';
 import { SubImage } from './styled-component';
 import img from '../../../assets/img/bitmap-copy.png';
 
-const SubImages = ({ active }) => {
+type Props = {
+  active: boolean,
+}
+const SubImages = ({ active = false }: Props) => {
   return (
     <SubImage active={active}>
       <img
@@ -13,14 +16,6 @@ const SubImages = ({ active }) => {
       />
     </SubImage>
   );
-};
-
-SubImages.propTypes = {
-  active: bool,
-};
-
-SubImages.defaultProps = {
-  active: false,
 };
 
 export default SubImages;

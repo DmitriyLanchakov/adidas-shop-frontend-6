@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -15,8 +16,12 @@ class Sidebar extends Component {
     this.state = {
       navbarOpen: window.innerWidth >= 768,
     };
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+    const self: Object = this;
+    self.toggleNavbar = this.toggleNavbar.bind(this);
   }
+  state: {
+    navbarOpen: boolean,
+  };
   toggleNavbar() {
     this.setState(prevState => ({// eslint-disable-line
       navbarOpen: !prevState.navbarOpen,

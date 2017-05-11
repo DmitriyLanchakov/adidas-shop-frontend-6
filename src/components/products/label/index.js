@@ -1,6 +1,6 @@
+// @flow
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import React from 'react';
-import { string } from 'prop-types';
 import styled from 'styled-components';
 
 const Label = styled.span`
@@ -15,13 +15,9 @@ const Label = styled.span`
   background-color: ${props => props.theme.colors.red};
 `;
 
-const ProductLabel = ({ name }) => <Label>{name}</Label>;
-
-ProductLabel.propTypes = {
+type Props = {
   name: string,
-};
-ProductLabel.defaultProps = {
-  name: '',
-};
+}
+const ProductLabel = ({ name }: Props) => <Label>{name}</Label>;
 
 export default ProductLabel;
