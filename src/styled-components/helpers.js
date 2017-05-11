@@ -14,9 +14,10 @@ export const media = Object.keys(s.media).reduce((opt, point) => {
   const cssBody = opt;
   // eslint-disable-next-line arrow-body-style
   cssBody[point] = prefix => (...args) => {
-    if (!prefix || ['min', 'max'].indexOf(prefix) < 0) {
+    // if (!prefix || ['min', 'max'].indexOf(prefix) < 0) {
+    if (!prefix || !['min', 'max'].includes(prefix)) {
       // eslint-disable-next-line no-console
-      console.error('The prefix value must be `min` or `max`');
+      console.warn('The prefix value must be `min` or `max`');
     }
     return css`
       @media (${prefix}-width: ${query}) {
