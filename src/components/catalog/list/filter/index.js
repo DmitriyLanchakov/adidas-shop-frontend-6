@@ -1,5 +1,5 @@
 import React from 'react';
-import Flexbox from '../../../styled-components/flexbox';
+import Flexbox from '../../../../styled-components/flexbox';
 import {
   FilterElement, FilterButton, FilterIcon,
   FilterToggleButton, FilterLayout,

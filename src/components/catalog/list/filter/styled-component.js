@@ -1,7 +1,7 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
-import iconFromFilter from '../../../assets/img/filter.png';
-import { media } from '../../../styled-components/helpers';
+import iconFromFilter from '../../../../assets/img/filter.png';
+import { media } from '../../../../styled-components/helpers';
 
 export const FilterLayout = styled.form`
   margin: 1rem 0 1rem 1rem;

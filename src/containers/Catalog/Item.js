@@ -5,8 +5,7 @@ import {
   ProductPrice, ProductLabel, ProductBtnMoreImage, ProductBtnMoreText,
   ProductByNow,
 } from '../../styled-components/catalog/item';
-import ProductHeader from '../../components/product/header';
-import SubImage from '../../components/product/subimage';
+import { ProductHeader, SubImage } from '../../components/catalog/item';
 import productimg from '../../assets/img/bitmap-copy.png';
 
 const CatalogItem = () => {

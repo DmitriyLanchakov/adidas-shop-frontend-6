@@ -1,5 +1,5 @@
 import React from 'react';
-import { CatalogFilter, CatalogItem } from '../../components/catalog';
+import { CatalogFilter, CatalogItem } from '../../components/catalog/list';
 import { Hr } from '../../styled-components/catalog/list';
 import Flexbox from '../../styled-components/flexbox';
 import Col from '../../styled-components/col';

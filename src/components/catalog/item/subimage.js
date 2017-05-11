@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import { SubImage } from './styled-component';
-import img from '../../assets/img/bitmap-copy.png';
+import img from '../../../assets/img/bitmap-copy.png';
 
 const SubImages = ({ active }) => {
   return (

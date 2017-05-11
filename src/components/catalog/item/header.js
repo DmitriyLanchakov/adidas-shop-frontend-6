@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import { ColorButton, TitleLayout, Title, Badge } from './styled-component';
-import Flexbox from '../../styled-components/flexbox';
+import Flexbox from '../../../styled-components/flexbox';
 
 const ItemHeader = ({ name }) => {
   return (
