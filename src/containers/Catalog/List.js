@@ -18,7 +18,7 @@ const Home = () => {
         >
           {[...Array(15)].map(() => {
             return (
-              <Col xs={12} sm={6} md={4} lg={3} >
+              <Col xs={12} sm={6} md={4} lg={3} key={Math.random()}>
                 <CatalogItem />
               </Col>
             );

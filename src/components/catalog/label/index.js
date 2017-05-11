@@ -1,3 +1,4 @@
+/* eslint arrow-body-style: ["error", "as-needed"] */
 import React from 'react';
 import { string } from 'prop-types';
 import styled from 'styled-components';
@@ -14,9 +15,7 @@ const Label = styled.span`
   background-color: ${props => props.theme.colors.red};
 `;
 
-const ProductLabel = ({ name }) => {
-  return <Label>{name}</Label>;
-};
+const ProductLabel = ({ name }) => <Label>{name}</Label>;
 
 ProductLabel.propTypes = {
   name: string,

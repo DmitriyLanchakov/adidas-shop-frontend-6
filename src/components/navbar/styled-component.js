@@ -1,8 +1,11 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const NavbarLink = styled(Link)`
+export const NavbarLink = styled(({
+  hassubnav, subitem, active, ...rest
+}) => <Link {...rest} />)`
   font-family: ${props => props.theme.fonts.andale};
   color: ${props => props.theme.colors.navbarSubLink};
   transition: ${props => props.theme.transition};
@@ -13,7 +16,7 @@ export const NavbarLink = styled(Link)`
   position: relative;
   font-size: 2.4rem;
   text-transform: uppercase;
-
+  
   ${props => props.hassubnav && `
     font-family: ${props.theme.fonts.ariabold};
     position: relative;

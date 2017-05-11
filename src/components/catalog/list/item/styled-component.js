@@ -1,4 +1,5 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -6,12 +7,15 @@ export const ProductPrice = styled.footer`
   display: block;
 `;
 
-export const ProductLink = styled(Link)`
+export const ProductLink = styled(({
+  inshop, money, ...rest
+}) => <Link {...rest} />)`
   font-family: ${props => props.theme.fonts.ariabold};
   margin: 0 .8rem .8rem;
   display: block;
   padding: 2.3rem 0;
   font-size: 3rem;
+
   ${props => props.inshop ? `
     color: #fff;
     background-image: linear-gradient(107deg, #0c09bf, #966dd8);
