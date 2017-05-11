@@ -1,0 +1,33 @@
+{
+  parser: "babel-eslint",
+  "extends": 'airbnb',
+  "rules": {
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
+    'arrow-body-style': [2, 'always'],
+    'react/forbid-prop-types': [2, { "forbid": ['any'] }],
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "jasmine": true
+  },
+  "plugins": ["compat"],
+  "settings": {
+    "targets": ['chrome >= 50', 'firefox', 'edge', 'ie >= 9', 'safari >= 9'],
+    "coverage": false,
+    "compiler": 'babel'
+  },
+  "globals": {
+    "fetch": false,
+    "document": true,
+    "localStorage": true,
+    "window": true,
+    "Generator": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+}
