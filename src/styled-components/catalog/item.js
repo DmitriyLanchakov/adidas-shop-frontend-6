@@ -1,14 +1,13 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
+import { media } from '../helpers';
 
 export const ProductDescription = styled.div`
   margin-top: 3rem;
   line-height: 1.5;
   font-family: ${props => props.theme.fonts.avenir};
   font-size: 3.3rem;
-  @media (max-width: ${props => props.theme.media.sm}) {
-    font-size: 3rem;
-  }
+  ${media.sm('max')`font-size: 3rem;`}
   p {
     color: #d8d8d8;
     &::selection { color: black; background-color: #e3e3e3; }
@@ -25,9 +24,7 @@ export const ProductDescription = styled.div`
 export const ProductImage = styled.div`
   margin-top: -18.5rem;
   img { width: 100% };
-  @media (max-width: ${props => props.theme.media.sm}) {
-    margin-top: 0;
-  }
+  ${media.sm('max')`margin-top`}
 `;
 
 export const ProductLayout = styled.div`
@@ -42,11 +39,11 @@ export const ProductPrice = styled.div`
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.ariabold};
   color: #e2e2e2;
-  @media (max-width: ${props => props.theme.media.sm}) {
+  ${media.sm('max')`
     margin-top: 0;
     padding-right: 1rem;
     min-height: 8.5rem;
-  }
+  `}
 
   &::${props => props.money} { content: '$'; display: inline-block; }
 `;

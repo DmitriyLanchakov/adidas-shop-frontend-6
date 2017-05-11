@@ -6,8 +6,8 @@ import 'normalize.css';
 import Layout from './components/layout';
 import StyleConfig from './styled-components/config';
 
-import Catalog from './containers/Catalog';
-import CatalogItem from './containers/CatalogItem';
+import Catalog from './containers/Catalog/List';
+import CatalogItem from './containers/Catalog/Item';
 import './styled-components/global';
 
 render(
@@ -15,7 +15,7 @@ render(
     <ThemeProvider theme={StyleConfig}>
       <Layout>
         <Route exact path="/" component={Catalog} />
-        <Route exact path="/item" component={CatalogItem} />
+        <Route path="/item" component={CatalogItem} />
       </Layout>
     </ThemeProvider>
   </BrowserRouter>,

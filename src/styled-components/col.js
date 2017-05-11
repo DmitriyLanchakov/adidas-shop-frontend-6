@@ -1,6 +1,12 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
 
+/**
+ * @method checkWidth
+ * @param  {number}   size  window size
+ * @param {string}  media  prefix [notRequired]
+ * @return {object} css values
+ */
 function checkWidth(size, media) {
   let $size = size;
 

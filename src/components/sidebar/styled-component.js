@@ -1,16 +1,17 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
+import { media } from '../../styled-components/helpers';
 
 export const SidebarLogoLayout = styled.div`
   margin: 3.1rem auto;
   text-align: center;
-  @media (max-width: ${props => props.theme.media.sm}) {
+  ${media.sm('max')`
     display: inline-block;
     margin: 1rem 2rem;
     text-align: left;
     float: left;
-  }
-`
+  `}
+`;
 
 export const MenuIcon = styled.span`
   left: 0;
@@ -42,10 +43,8 @@ export const MenuIcon = styled.span`
 `;
 
 export const MobileTogglerNav = styled.div`
-  @media (min-width: ${props => props.theme.media.sm}) {
-    display: none;
-  }
-  @media (max-width: ${props => props.theme.media.sm}) {
+  ${media.sm('min')`display: none;`}
+  ${media.sm('max')`
     display: inline-block;
     position: relative;
     float: right;
@@ -60,16 +59,16 @@ export const MobileTogglerNav = styled.div`
       position: relative;
       background: transparent;
     }
-  }
+  `}
 `;
 
 export const NavbarLayout = styled.div`
-  @media (max-width: ${props => props.theme.media.sm}) {
+  ${media.sm('max')`
     max-width: 41.4rem;
     margin: auto;
     clear: both;
     padding: 0 2rem;
-  }
+  `}
 `;
 
 export const SearchLayout = styled.div`

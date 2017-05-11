@@ -12,15 +12,15 @@ import SearchForm from '../searchForm';
 class Sidebar extends Component {
   constructor() {
     super();
+    this.state = {
+      navbarOpen: window.innerWidth >= 768,
+    };
     this.toggleNavbar = this.toggleNavbar.bind(this);
   }
-  state = {
-    navbarOpen: window.innerWidth >= 768,
-  }
   toggleNavbar() {
-    this.setState({
-      navbarOpen: !this.state.navbarOpen,
-    });
+    this.setState(prevState => ({// eslint-disable-line
+      navbarOpen: !prevState.navbarOpen,
+    }));
   }
   render() {
     const { navbarOpen } = this.state;

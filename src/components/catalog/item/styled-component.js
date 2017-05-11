@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const ProductPrice = styled.footer`
   display: block;
-`
+`;
 
 export const ProductLink = styled(Link)`
   font-family: ${props => props.theme.fonts.ariabold};
@@ -40,4 +40,4 @@ export const ProductItemLayout = styled.div`
   background-color: #f4f4f4;
   position: relative;
   img { width: 100%; }
-`
+`;

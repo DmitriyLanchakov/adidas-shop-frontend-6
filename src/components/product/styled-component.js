@@ -1,5 +1,6 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
+import { media } from '../../styled-components/helpers';
 
 export const ColorButton = styled.button`
   background: transparent;
@@ -18,13 +19,12 @@ export const TitleLayout = styled.div`
   max-width: 30rem;
   line-height: 1;
   position: relative;
-
-  @media (max-width: ${props => props.theme.media.sm}) {
+  ${media.sm('max')`
     max-width: none;
     h1 {
       font-size: 4.5rem;
     }
-  }
+  `}
 `;
 export const Title = styled.h1`
   margin: 0;

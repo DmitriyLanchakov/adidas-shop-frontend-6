@@ -3,6 +3,7 @@ import s from './config';
 import avenirBold from '../assets/fonts/avenir-next-bold.woff';
 import avenirRegular from '../assets/fonts/avenir-next-regular.woff';
 import andaleMono from '../assets/fonts/Andale-Mono.woff';
+import { media } from './helpers';
 
 export default injectGlobal`
   @font-face {
@@ -36,22 +37,22 @@ export default injectGlobal`
   }
   section {
     flex-basis: 100%;
-    @media (max-width: ${s.media.sm}) {
+    ${media.sm('max')`
       margin-top: 9rem;
-    }
+    `}
   }
 
   aside {
     min-height: 100vh;
     background-color: #0e0e0e;
     flex-basis: 41.4rem;
-    @media (max-width: ${s.media.sm}) {
+    ${media.sm('max')`
       min-height: auto;
       position: fixed;
       padding: 0;
       left: 0;
       width: 100%;
       z-index: 1;
-    }
+    `}
   }
 `;

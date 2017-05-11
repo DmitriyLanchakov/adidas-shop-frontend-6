@@ -1,13 +1,13 @@
 import React from 'react';
-import Flexbox from '../styled-components/flexbox';
+import Flexbox from '../../styled-components/flexbox';
 import {
   ProductDescription, ProductImage, ProductLayout,
   ProductPrice, ProductLabel, ProductBtnMoreImage, ProductBtnMoreText,
   ProductByNow,
-} from '../styled-components/products/item';
-import ProductHeader from '../components/product/header';
-import SubImage from '../components/product/subimage';
-import productimg from '../assets/img/bitmap-copy.png';
+} from '../../styled-components/catalog/item';
+import ProductHeader from '../../components/product/header';
+import SubImage from '../../components/product/subimage';
+import productimg from '../../assets/img/bitmap-copy.png';
 
 const CatalogItem = () => {
   return (

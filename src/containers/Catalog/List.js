@@ -1,8 +1,8 @@
 import React from 'react';
-import { CatalogFilter, CatalogItem } from '../components/catalog';
-import { Hr } from '../styled-components/products/list';
-import Flexbox from '../styled-components/flexbox';
-import Col from '../styled-components/col';
+import { CatalogFilter, CatalogItem } from '../../components/catalog';
+import { Hr } from '../../styled-components/catalog/list';
+import Flexbox from '../../styled-components/flexbox';
+import Col from '../../styled-components/col';
 
 const Home = () => {
   return (

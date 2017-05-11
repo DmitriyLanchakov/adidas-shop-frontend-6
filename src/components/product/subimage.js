@@ -4,7 +4,6 @@ import { SubImage } from './styled-component';
 import img from '../../assets/img/bitmap-copy.png';
 
 const SubImages = ({ active }) => {
-  console.log(active);
   return (
     <SubImage active={active}>
       <img
