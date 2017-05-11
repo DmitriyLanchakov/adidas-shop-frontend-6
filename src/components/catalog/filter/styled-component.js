@@ -4,7 +4,7 @@ import iconFromFilter from '../../../assets/img/filter.png';
 import { media } from '../../../styled-components/helpers';
 
 export const FilterLayout = styled.form`
-  margin: 1rem 0 1rem 2.3rem;
+  margin: 1rem 0 1rem 1rem;
 `;
 
 export const FilterElement = styled.div`
@@ -51,7 +51,7 @@ export const FilterIcon = styled.span`
 `;
 
 export const FilterToggleButton = styled.button`
-  padding: 1rem 0 1rem 1rem;
+  padding: 1.1rem 0.8rem 0.5rem;
   margin-right: 0;
   background: transparent;
   border: 0;
