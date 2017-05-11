@@ -13,7 +13,6 @@ export const FilterElement = styled.div`
   font-family: ${props => props.theme.fonts.ariabold};
   margin: 0 0.3rem;
   cursor: pointer;
-  margin-right: 2rem;
   transition: ${props => props.theme.colors.transition};
 
   span {
@@ -52,7 +51,7 @@ export const FilterIcon = styled.span`
 `;
 
 export const FilterToggleButton = styled.button`
-  padding: 1.1rem 0.8rem;
+  padding: 1rem 0 1rem 1rem;
   margin-right: 0;
   background: transparent;
   border: 0;
