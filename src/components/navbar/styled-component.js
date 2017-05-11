@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const NavbarLink = styled(({
-  hassubnav, subitem, active, ...rest
+  hasSubnav, isSubitem, isActive, ...rest
 }) => <Link {...rest} />)`
   font-family: ${props => props.theme.fonts.andale};
   color: ${props => props.theme.colors.navbarSubLink};
@@ -16,8 +16,8 @@ export const NavbarLink = styled(({
   position: relative;
   font-size: 2.4rem;
   text-transform: uppercase;
-  
-  ${props => props.hassubnav && `
+
+  ${props => props.hasSubnav && `
     font-family: ${props.theme.fonts.ariabold};
     position: relative;
     &::after {
@@ -33,7 +33,7 @@ export const NavbarLink = styled(({
     }
   `};
 
-  ${props => props.subitem ? `
+  ${props => props.isSubitem ? `
     &:hover {
       opacity: 1;
       transition: ${props.theme.transition};
@@ -47,7 +47,7 @@ export const NavbarLink = styled(({
     transition: ${props => props.theme.transition};
   };
 
-  ${props => props.active && 'opacity: 1;'};
+  ${props => props.isActive && 'opacity: 1;'};
 `;
 
 export const NavbarLayout = styled.nav`

@@ -3,12 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const ProductPrice = styled.footer`
+export const Price = styled.footer`
   display: block;
 `;
 
 export const ProductLink = styled(({
-  inshop, money, ...rest
+  inShop, money, ...rest
 }) => <Link {...rest} />)`
   font-family: ${props => props.theme.fonts.ariabold};
   margin: 0 .8rem .8rem;
@@ -16,7 +16,7 @@ export const ProductLink = styled(({
   padding: 2.3rem 0;
   font-size: 3rem;
 
-  ${props => props.inshop ? `
+  ${props => props.inShop ? `
     color: #fff;
     background-image: linear-gradient(107deg, #0c09bf, #966dd8);
   ` : `
@@ -30,7 +30,7 @@ export const ProductLink = styled(({
   }
 `;
 
-export const ProductImageLayout = styled.div`
+export const ImageLayout = styled.div`
   padding: 0.8rem;
   img {
     with: 100%;
@@ -38,10 +38,11 @@ export const ProductImageLayout = styled.div`
   }
 `;
 
-export const ProductItemLayout = styled.div`
+export const ItemLayout = styled.div`
   margin: 0.8rem 1.25rem;
   padding-bottom: 0.2rem;
   background-color: #f4f4f4;
+  text-align: center;
   position: relative;
   img { width: 100%; }
 `;

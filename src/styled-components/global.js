@@ -30,6 +30,10 @@ export default injectGlobal`
   }
   html { font-size: 62.5%; }
 
+  .is-nowrap {
+    flex-wrap: nowrap;
+  }
+
 
   aside, section {
     button, a, input { outline-style: none; }

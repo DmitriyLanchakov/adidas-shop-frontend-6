@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { media } from '../../styled-components/helpers';
 
-export const SidebarLogoLayout = styled.div`
+export const LogoLayout = styled.div`
   margin: 3.1rem auto;
   text-align: center;
   ${media.sm('max')`

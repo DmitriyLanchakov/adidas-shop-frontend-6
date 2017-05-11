@@ -7,7 +7,7 @@ export const FilterLayout = styled.form`
   margin: 1rem 0 1rem 1rem;
 `;
 
-export const FilterElement = styled.div`
+export const Elements = styled.div`
   text-transform: uppercase;
   font-size: 2.4rem;
   font-family: ${props => props.theme.fonts.ariabold};
@@ -20,7 +20,7 @@ export const FilterElement = styled.div`
   }
 `;
 
-export const FilterButton = styled.button`
+export const Button = styled.button`
   color: ${props => props.active
     ? props.theme.colors.blue
     : props.theme.colors.grey};
@@ -50,7 +50,7 @@ export const FilterIcon = styled.span`
   display: inline-block;
 `;
 
-export const FilterToggleButton = styled.button`
+export const ToggleFilter = styled.button`
   padding: 1.1rem 0.8rem 0.5rem;
   margin-right: 0;
   background: transparent;

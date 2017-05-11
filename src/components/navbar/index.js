@@ -4,11 +4,11 @@ import { NavbarLayout, NavbarLink } from './styled-component';
 const Navbar = () => {
   return (
     <NavbarLayout role="navigation" aria-label="меню">
-      <NavbarLink to="/" active hassubnav>SPORTS</NavbarLink>
+      <NavbarLink to="/" isActive hasSubnav>SPORTS</NavbarLink>
 
       <NavbarLayout role="navigation" aria-label="меню">
-        <NavbarLink subitem role="menuitem" to="/">shoes</NavbarLink>
-        <NavbarLink subitem role="menuitem" to="/">clothing</NavbarLink>
+        <NavbarLink isSubitem role="menuitem" to="/">shoes</NavbarLink>
+        <NavbarLink isSubitem role="menuitem" to="/">clothing</NavbarLink>
       </NavbarLayout>
 
       <NavbarLink role="menuitem" to="/">brand</NavbarLink>

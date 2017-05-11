@@ -1,8 +1,8 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
-import { media } from '../helpers';
+import { media } from '../../../styled-components/helpers';
 
-export const ProductDescription = styled.div`
+export const Description = styled.div`
   margin-top: 3rem;
   line-height: 1.5;
   font-family: ${props => props.theme.fonts.avenir};
@@ -21,7 +21,7 @@ export const ProductDescription = styled.div`
   }
 `;
 
-export const ProductImage = styled.div`
+export const Image = styled.div`
   margin-top: -18.5rem;
   img { width: 100% };
   ${media.sm('max')`margin-top`}
@@ -31,9 +31,14 @@ export const ProductLayout = styled.div`
   padding: 1.2rem 3.7rem 0 3.1rem;
   margin: 0;
   position: relative;
+
+  .otherLink {
+    position: relative;
+    flex-basis: 10%;
+  }
 `;
 
-export const ProductPrice = styled.div`
+export const Price = styled.div`
   margin-top: -5rem;
   font-size: 8rem;
   text-transform: uppercase;
@@ -48,7 +53,7 @@ export const ProductPrice = styled.div`
   &::${props => props.money} { content: '$'; display: inline-block; }
 `;
 
-export const ProductLabel = styled.div`
+export const Label = styled.div`
   margin-top: -2rem;
   padding: 3rem 2rem;
   position: relative;
@@ -60,7 +65,7 @@ export const ProductLabel = styled.div`
   ${props => props.default && 'color: #fff; background-color: #e3e3e3;'}
 `;
 
-export const ProductBtnMoreImage = styled.div`
+export const BtnMoreImage = styled.div`
   left: 0;
   color: #e7e7e7;
   position: absolute;
@@ -89,7 +94,7 @@ export const ProductBtnMoreImage = styled.div`
   }
 `;
 
-export const ProductBtnMoreText = styled.div`
+export const BtnMore = styled.div`
   cursor: pointer;
   font-size: 1.4rem;
   color: #c0c0c0;
@@ -99,7 +104,7 @@ export const ProductBtnMoreText = styled.div`
   box-shadow: none;
 `;
 
-export const ProductByNow = styled.div`
+export const ByNow = styled.div`
   text-align: center;
   @supports (position: sticky) {
     position: sticky;

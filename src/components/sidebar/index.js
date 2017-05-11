@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  SidebarLogoLayout, MenuIcon,
+  LogoLayout, MenuIcon,
   MobileTogglerNav, NavbarLayout,
   SearchLayout,
 } from './styled-component';
@@ -26,15 +26,12 @@ class Sidebar extends Component {
     const { navbarOpen } = this.state;
     const navbarState = navbarOpen ? 'block' : 'none';
     return (
-      <div className="b-sidebar m-text-center">
-        <SidebarLogoLayout>
+      <div>
+        <LogoLayout>
           <Link to="/"> <Logo name="logo" /> </Link>
-        </SidebarLogoLayout>
+        </LogoLayout>
         <MobileTogglerNav>
-          <button
-            aria-label="Открыть меню"
-            onClick={this.toggleNavbar}
-          >
+          <button aria-label="Открыть меню" onClick={this.toggleNavbar}>
             <MenuIcon />
           </button>
         </MobileTogglerNav>

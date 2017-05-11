@@ -1,7 +1,7 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
 
-export const SearchInput = styled.input`
+export const Input = styled.input`
   color: ${props => props.theme.colors.searchInput};
   opacity: 0.56;
   text-transform: uppercase;
@@ -16,7 +16,7 @@ export const SearchInput = styled.input`
   width: 100%;
 `;
 
-export const SearchButton = styled.button`
+export const Button = styled.button`
   padding: 0;
   top: 0.3rem;
   left: 0;
@@ -30,7 +30,7 @@ export const SearchButton = styled.button`
   box-shadow: none;
 `;
 
-export const SearchIconSearch = styled.span`
+export const SearchIcon = styled.span`
   color: #fff;
   top: -0.5rem;
   left: 0.5rem;

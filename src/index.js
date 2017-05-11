@@ -6,16 +6,16 @@ import 'normalize.css';
 import Layout from './components/layout';
 import StyleConfig from './styled-components/config';
 
-import Catalog from './containers/Catalog/List';
-import CatalogItem from './containers/Catalog/Item';
+import ProductList from './containers/Products/List';
+import ProductShow from './containers/Products/Show';
 import './styled-components/global';
 
 render(
   <BrowserRouter>
     <ThemeProvider theme={StyleConfig}>
       <Layout>
-        <Route exact path="/" component={Catalog} />
-        <Route path="/item" component={CatalogItem} />
+        <Route exact path="/" component={ProductList} />
+        <Route path="/item" component={ProductShow} />
       </Layout>
     </ThemeProvider>
   </BrowserRouter>,

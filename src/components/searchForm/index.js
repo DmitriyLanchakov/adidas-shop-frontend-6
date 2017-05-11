@@ -1,15 +1,15 @@
 import React from 'react';
 import {
-  SearchInput, SearchButton, SearchIconSearch,
+  Input, Button, SearchIcon,
 } from './styled-component';
 
 const SearchForm = () => {
   return (
     <form action="/" method="GET" role="search">
-      <SearchButton type="submit">
-        <SearchIconSearch />
-      </SearchButton>
-      <SearchInput type="search" />
+      <Button type="submit">
+        <SearchIcon />
+      </Button>
+      <Input type="search" />
     </form>
   );
 };

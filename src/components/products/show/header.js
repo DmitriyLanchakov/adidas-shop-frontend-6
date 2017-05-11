@@ -1,24 +1,24 @@
 import React from 'react';
 import { string } from 'prop-types';
+import { Row } from 'react-flexbox-grid';
 import { ColorButton, TitleLayout, Title, Badge } from './styled-component';
-import Flexbox from '../../../styled-components/flexbox';
 
 const ItemHeader = ({ name }) => {
   return (
-    <Flexbox flow="row wrap" justify="space-between">
+    <Row between="xs">
       <TitleLayout>
         <Title role="heading">{name}</Title>
       </TitleLayout>
-      <Flexbox justify="flex-end" className="b-item__more">
+      <Row end="xs" middle="xs">
         <div>
-          <ColorButton role="button" type="button" color="red" active />
+          <ColorButton role="button" type="button" color="red" isActive />
           <ColorButton role="button" type="button" color="green" />
           <ColorButton role="button" type="button" color="yellow" />
           <ColorButton role="button" type="button" color="#4d87ca" />
         </div>
         <Badge>save</Badge>
-      </Flexbox>
-    </Flexbox>
+      </Row>
+    </Row>
   );
 };
 

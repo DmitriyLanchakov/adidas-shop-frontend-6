@@ -12,7 +12,7 @@ export const ColorButton = styled.button`
   position: relative;
   margin: 0 0.75rem;
   background-color: ${props => props.color};
-  ${props => props.active && 'width: 2.4rem; height: 2.4rem; top: 5px'}
+  ${props => props.isActive && 'width: 2.4rem; height: 2.4rem; top: 5px'}
 `;
 
 export const TitleLayout = styled.div`
@@ -51,7 +51,7 @@ export const SubImage = styled.div`
   max-height: 17rem;
   overflow: hidden;
   border: 0.5rem solid transparent;
-  border-color: ${props => props.active ? '#e7e7e7' : ''};
+  border-color: ${props => props.isActive ? '#e7e7e7' : ''};
 
   img { width: 100%; }
 `;
