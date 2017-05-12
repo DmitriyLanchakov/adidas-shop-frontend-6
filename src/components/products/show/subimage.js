@@ -6,7 +6,7 @@ import img from '../../../assets/img/bitmap-copy.png';
 type Props = {
   active: boolean,
 }
-const SubImages = ({ active = false }: Props) => {
+const SubImages = ({ active }: Props) => {
   return (
     <SubImage active={active}>
       <img
