@@ -33,13 +33,13 @@ export const ProductLink = styled(({
 export const ImageLayout = styled.div`
   padding: 0.8rem;
   img {
-    with: 100%;
+    width: 100%;
     background-color: #fff;
   }
 `;
 
 export const ItemLayout = styled.div`
-  margin: 0.8rem 1.25rem;
+  margin: 0.8rem 0.5rem;
   padding-bottom: 0.2rem;
   background-color: #f4f4f4;
   text-align: center;

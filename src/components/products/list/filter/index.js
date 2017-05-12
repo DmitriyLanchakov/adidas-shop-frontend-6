@@ -1,9 +1,8 @@
 import React from 'react';
 import { Row } from 'react-flexbox-grid';
-
 import {
   Elements, Button, FilterIcon,
-  ToggleFilter, FilterLayout,
+  ToggleFilter, FilterLayout, Name,
 } from './styled-component';
 
 const CatalogFilter = () => {
@@ -21,7 +20,7 @@ const CatalogFilter = () => {
             <Button role="button" type="button">men</Button>
           </Elements>
           <Elements role="listbox">
-            <span>size </span>
+            <Name>size </Name>
             <Button role="button" type="button">37</Button>
             <Button role="button" type="button">38</Button>
             <Button role="button" type="button">39</Button>

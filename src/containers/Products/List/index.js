@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import { CatalogFilter, CatalogItem } from '../../../components/products/list';
-import { Hr } from './styled-component';
+import { Hr, Main } from './styled-component';
 
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
         <CatalogFilter />
       </header>
       <Hr />
-      <main role="main" aria-label="Основная часть">
+      <Main role="main" aria-label="Основная часть">
         <Row start="xs" role="group">
           {[...Array(15)].map(() => {
             return (
@@ -21,7 +21,7 @@ const Home = () => {
             );
           })}
         </Row>
-      </main>
+      </Main>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavbarLink = styled(({
-  hasSubnav, isSubitem, isActive, ...rest
-}) => <Link {...rest} />)`
+  hasSubnav, isSubitem, ...rest
+}) => <NavLink {...rest} />)`
   font-family: ${props => props.theme.fonts.andale};
   color: ${props => props.theme.colors.navbarSubLink};
   transition: ${props => props.theme.transition};
@@ -47,11 +47,12 @@ export const NavbarLink = styled(({
     transition: ${props => props.theme.transition};
   };
 
-  ${props => props.isActive && 'opacity: 1;'};
+  &.is-active { opacity: 1 }
 `;
 
 export const NavbarLayout = styled.nav`
-  margin: 3rem 0;
+  margin: 15vh 0 0;
   width: 100%;
   text-align: center;
+  > nav { margin: 3rem 0; }
 `;
