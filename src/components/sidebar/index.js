@@ -14,22 +14,24 @@ class Sidebar extends Component {
   constructor() {
     super();
     this.state = {
-      navbarOpen: window.innerWidth >= 768,
+      isNavbarOpen: window.innerWidth >= 768,
     };
-    const self: Object = this;
-    self.toggleNavbar = this.toggleNavbar.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
+
   state: {
-    navbarOpen: boolean,
+    isNavbarOpen: boolean,
   };
+  toggleNavbar: Function;
+
   toggleNavbar() {
     this.setState(prevState => ({// eslint-disable-line
-      navbarOpen: !prevState.navbarOpen,
+      isNavbarOpen: !prevState.isNavbarOpen,
     }));
   }
   render() {
-    const { navbarOpen } = this.state;
-    const navbarState = navbarOpen ? 'block' : 'none';
+    const { isNavbarOpen } = this.state;
+    const navbarState = isNavbarOpen ? 'block' : 'none';
     return (
       <div>
         <LogoLayout>
