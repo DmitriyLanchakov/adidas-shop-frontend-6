@@ -26,6 +26,8 @@
     "deploy": "yarn build && surge -p build -d wiry-cast.surge.sh",
     "flow": "flow",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "$(npm bin)/eslint src",
+    "prepush": "npm run lint"
   }
 }
