@@ -16,13 +16,13 @@ export const ProductLink = styled(({
   padding: 2.3rem 0;
   font-size: 3rem;
 
-  ${props => props.inShop ? `
+  ${props => (props.inShop ? `
     color: #fff;
     background-image: linear-gradient(107deg, #0c09bf, #966dd8);
   ` : `
     color: black;
     background-color: #fff;
-  `}
+  `)}
 
   &::${props => props.money} {
     content: "$";

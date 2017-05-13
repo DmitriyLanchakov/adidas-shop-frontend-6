@@ -21,9 +21,9 @@ export const Elements = styled.div`
 `;
 
 export const Button = styled.button`
-  color: ${props => props.active
+  color: ${props => (props.active
     ? props.theme.colors.blue
-    : props.theme.colors.grey};
+    : props.theme.colors.grey)};
   font-size: 2.4rem;
   font-family: ${props => props.theme.fonts.ariabold};
   margin: 0.5rem 0.4rem 0;

@@ -1,6 +1,6 @@
 {
-  "name": "te",
-  "version": "0.1.0",
+  "name": "adidas-shop-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "normalize.css": "^7.0.0",
@@ -12,6 +12,7 @@
     "styled-components": "^1.4.6"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-compat": "^1.0.2",
@@ -24,8 +25,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "yarn build && surge -p build -d wiry-cast.surge.sh",
-    "flow": "flow",
+    "flow": "./node_modules/.bin/flow flow",
+    "flow:typed": "yarn add flow-typed --peer && yarn flow:typed:moduls && yarn flow",
+    "flow:typed:moduls": "./node_modules/.bin/flow-typed install styled-components@1.4",
+    "lint": "./node_modules/.bin/eslint src",
     "test": "react-scripts test --env=jsdom",
+    "prepush": "yarn lint && yarn flow:typed && yarn deploy",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stk-dmitry/adidas-shop-frontend.git"
+  },
+  "author": {
+    "name": "Strelkov Dmitry",
+    "email": "stk-dmitry@ya.ru",
+    "url": "https://github.com/stk-dmitry"
   }
 }

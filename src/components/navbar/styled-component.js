@@ -33,14 +33,14 @@ export const NavbarLink = styled(({
     }
   `};
 
-  ${props => props.isSubitem ? `
+  ${props => (props.isSubitem ? `
     &:hover {
       opacity: 1;
       transition: ${props.theme.transition};
     }
   ` : `
     font-family: ${props.theme.fonts.ariabold};
-  `};
+  `)};
 
   &:hover {
     opacity: 1;
