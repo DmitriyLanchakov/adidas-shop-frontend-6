@@ -1,9 +1,15 @@
 language: node_js
+
 node_js:
   - "7"
+
 notifications:
   email: false
+
 sudo: false
+
 script:
+  - yarn install
   - yarn run lint
+
 cache: yarn
