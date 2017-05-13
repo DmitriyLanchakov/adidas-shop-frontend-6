@@ -9,7 +9,6 @@
 
 [options]
 module.name_mapper='.*\.\(jpg\|jpeg\|gif\|svg\|png\)$' -> 'Image'
-
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
