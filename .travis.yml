@@ -4,8 +4,6 @@ node_js:
 notifications:
   email: false
 sudo: false
-before_script:
-  - npm install
 script:
-  - npm run lint
-cache: npm
+  - yarn run lint
+cache: yarn
