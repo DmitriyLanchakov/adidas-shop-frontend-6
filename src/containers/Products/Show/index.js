@@ -46,7 +46,11 @@ const CatalogItem = () => {
           </div>
         </Row>
         <Description>
-          <p><b>Adidas</b> is a German multinational corporation, headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories.</p>
+          <p>
+            <b>Adidas</b> is a German multinational corporation,
+            headquartered in Herzogenaurach, Germany,
+            that designs and manufactures shoes, clothing and accessories.
+          </p>
         </Description>
       </ProductLayout>
 
