@@ -1,7 +1,16 @@
 language: node_js
+
 node_js:
-  - "node"
-install:
-  - npm install
+  - "7"
+
+cache:
+  npm: true
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
 script:
+  - npm install
   - npm run lint

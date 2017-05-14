@@ -9,6 +9,7 @@ import s from './config';
  * @param {string} prefix - min | max prefix size
  * @return {object} css property
  */
+// eslint-disable-next-line import/prefer-default-export
 export const media = Object.keys(s.media).reduce((opt, point) => {
   const query = s.media[point];
   const cssBody = opt;

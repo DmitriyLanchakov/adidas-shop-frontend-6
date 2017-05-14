@@ -51,7 +51,7 @@ export const SubImage = styled.div`
   max-height: 17rem;
   overflow: hidden;
   border: 0.5rem solid transparent;
-  border-color: ${props => props.isActive ? '#e7e7e7' : ''};
+  border-color: ${props => (props.isActive ? '#e7e7e7' : '')};
 
   img { width: 100%; }
 `;
