@@ -28,7 +28,7 @@
     "flow": "./node_modules/.bin/flow flow",
     "flow:typed": "yarn add flow-typed --peer && yarn flow:typed:moduls && yarn flow",
     "flow:typed:moduls": "./node_modules/.bin/flow-typed install styled-components@1.4",
-    "lint": "./node_modules/.bin/eslint src",
+    "lint": "./node_modules/.bin/eslint .eslintrc src",
     "test": "react-scripts test --env=jsdom",
     "prepush": "yarn lint && yarn flow:typed && yarn deploy",
     "eject": "react-scripts eject"

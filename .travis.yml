@@ -12,7 +12,7 @@ notifications:
   email: false
 
 
-sudo: required
+sudo: true
 before_install:
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
   - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -20,6 +20,7 @@ before_install:
   - sudo apt-get install -y -qq yarn
 
 script:
+  - yarn install -g eslint
   - pwd && ls -la
   - yarn install
   - yarn run lint
