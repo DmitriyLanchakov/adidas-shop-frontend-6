@@ -27,11 +27,10 @@
     "build": "react-scripts build",
     "deploy": "yarn build && surge -p build -d wiry-cast.surge.sh",
     "flow": "./node_modules/.bin/flow flow",
-    "flow:typed": "yarn add flow-typed --peer && yarn flow:typed:moduls && yarn flow",
-    "flow:typed:moduls": "./node_modules/.bin/flow-typed install styled-components@1.4",
-    "lint": "eslint src --ext=js,jsx",
+    "flow:build": "bash ./bin/flow.sh",
+    "lint": "./node_modules/.bin/eslint src --ext=js,jsx",
     "test": "react-scripts test --env=jsdom",
-    "prepush": "yarn lint && yarn flow:typed && yarn deploy",
+    "prepush": "yarn lint && yarn flow:build && yarn deploy",
     "eject": "react-scripts eject"
   },
   "repository": {

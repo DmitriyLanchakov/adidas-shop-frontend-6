@@ -11,7 +11,7 @@ $ yarn start
 $ yarn
 $ yarn lint # eslint by airbnb config
 $ yarn test # jsdom watch mode ( a | q )
-$ yarn flow:typed && yarn flow
+$ yarn flow:build
 ```
 
 ## Prepush
@@ -22,6 +22,7 @@ $ yarn prepush
 ```
 
 ### FLow
+[flow-typed](https://github.com/flowtype/flow-typed/tree/master/definitions/npm)
 ```sh
 $ npm install -g flow-typed
 $ flow-typed install styled-components@1.4
