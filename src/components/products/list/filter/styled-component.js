@@ -36,6 +36,7 @@ export const Button = styled.button`
   cursor: pointer;
   padding: 1.1rem 0;
 
+  &.is-active { color: ${props => props.theme.colors.blue} }
   &:hover {
     transition: ${props => props.theme.transition};
     color: ${props => props.theme.colors.blue};

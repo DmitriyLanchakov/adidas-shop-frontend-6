@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import React, { Component } from 'react';
 import { Row } from 'react-flexbox-grid';
 import {
   Description, Image, ProductLayout,
@@ -7,58 +8,82 @@ import {
 } from './styled-component';
 import { ProductHeader, SubImage } from '../../../components/products/show';
 import productimg from '../../../assets/img/bitmap-copy.png';
+import Preloader from '../../../components/preloader';
+import { FETCH_PRODUCTS_URL } from '../../../services/api';
 
-const CatalogItem = () => {
-  return (
-    <main role="main" aria-label="Основная часть">
-      <ProductLayout>
+class CatalogItem extends Component {
+  constructor() {
+    super();
+    this.state = {
+      item: {},
+      fetching: true,
+    };
+  }
+  state: { item: Object, fetching: boolean }
 
-        <div style={{ position: 'relative' }}>
-          <ProductHeader name="ultra boots" />
-          <Row end="xs" role="math">
-            <Price money="before">170</Price>
-          </Row>
-          <Row start="xs">
-            <Label default>sale</Label>
-          </Row>
-        </div>
+  async componentDidMount(): any {
+    type Params = {
+      match: { params: { id: number } };
+    };
+    const { match: { params: { id } } }: Params = this.props;
+    const res = await fetch(`${FETCH_PRODUCTS_URL}/${id}`);
+    const item = await res.json();
+    await this.setStateAsync({ item, fetching: false });
+  }
+  setStateAsync(state: Object) {
+    return new Promise(resolve => {
+      this.setState(state, resolve);
+    });
+  }
 
-        <Row flow="row wrap" center="xs">
-          <Image>
-            <img
-              src={productimg}
-              role="presentation"
-              alt="картинка" draggable="false"
-            />
-          </Image>
-        </Row>
+  render() {
+    const { item, fetching } = this.state;
+    if (fetching) return <Preloader />;
+    return (
+      <main role="main" aria-label="Основная часть">
+        <ProductLayout>
 
-        <Row start="start" middle="xs">
-          <SubImage active />
-          <SubImage />
-          <SubImage />
-          <SubImage />
-          <div className="otherLink">
-            <BtnMoreImage><span /></BtnMoreImage>
+          <div style={{ position: 'relative' }}>
+            <ProductHeader name="ultra boots" />
+            <Row end="xs" role="math">
+              <Price money="before">170</Price>
+            </Row>
+            <Row start="xs">
+              <Label default>sale</Label>
+            </Row>
           </div>
-          <div className="otherLink">
-            <BtnMore>see more photos</BtnMore>
-          </div>
-        </Row>
-        <Description>
-          <p>
-            <b>Adidas</b> is a German multinational corporation,
-            headquartered in Herzogenaurach, Germany,
-            that designs and manufactures shoes, clothing and accessories.
-          </p>
-        </Description>
-      </ProductLayout>
 
-      <ByNow>
-        <button type="button" aria-label="купить">buy now</button>
-      </ByNow>
-    </main>
-  );
-};
+          <Row center="xs">
+            <Image>
+              <img
+                src={productimg}
+                role="presentation"
+                alt="картинка" draggable="false"
+              />
+            </Image>
+          </Row>
+
+          <Row start="xs" middle="xs">
+            <SubImage active />
+            <SubImage />
+            <SubImage />
+            <SubImage />
+            <div className="otherLink">
+              <BtnMoreImage><span /></BtnMoreImage>
+            </div>
+            <div className="otherLink">
+              <BtnMore>see more photos</BtnMore>
+            </div>
+          </Row>
+          <Description dangerouslySetInnerHTML={{ __html: item.body }} />
+        </ProductLayout>
+
+        <ByNow>
+          <button type="button" aria-label="купить">buy now</button>
+        </ByNow>
+      </main>
+    );
+  }
+}
 
 export default CatalogItem;

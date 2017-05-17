@@ -41,15 +41,16 @@ export default injectGlobal`
   }
   section {
     flex-basis: 100%;
-    ${media.sm('max')`
-      margin-top: 9rem;
-    `}
+    ${media.sm('max')`margin-top: 9rem;`}
   }
 
   aside {
     min-height: 100vh;
     background-color: #0e0e0e;
     flex-basis: 41.4rem;
+    ${media.sm('min')`
+      min-width: 40rem;
+    `};
     ${media.sm('max')`
       min-height: auto;
       position: fixed;

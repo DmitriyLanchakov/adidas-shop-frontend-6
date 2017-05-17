@@ -5,7 +5,20 @@ import {
   ToggleFilter, FilterLayout, Name,
 } from './styled-component';
 
-const CatalogFilter = () => {
+type Props = {
+  filterChange: Function,
+}
+
+const filters: Object = [
+  {
+    id: 1, name: null, get: 'gender', obj: ['Women', 'Men'],
+  },
+  {
+    id: 2, name: 'size', get: 'size', obj: [37, 38, 39, 40, 41],
+  },
+];
+
+const CatalogFilter = ({ filterChange }: Props) => {
   return (
     <FilterLayout action="#" method="get" role="search">
       <Row start="xs">
@@ -15,19 +28,23 @@ const CatalogFilter = () => {
           </ToggleFilter>
         </Elements>
         <Row start="xs">
-          <Elements role="listbox">
-            <Button role="button" type="button" active >women</Button>
-            <Button role="button" type="button">men</Button>
-          </Elements>
-          <Elements role="listbox">
-            <Name>size </Name>
-            <Button role="button" type="button">37</Button>
-            <Button role="button" type="button">38</Button>
-            <Button role="button" type="button">39</Button>
-            <Button role="button" type="button" active>40</Button>
-            <Button role="button" type="button">41</Button>
-            <Button role="button" type="button">42</Button>
-          </Elements>
+          {filters.map(fi => {
+            return (
+              <Elements role="listbox" key={fi.id}>
+                {fi.name && <Name>{fi.name}</Name>}
+                {fi.obj.map(ob => {
+                  return (
+                    <Button
+                      key={ob}
+                      role="button" type="button"
+                      data-fname={fi.get} data-value={ob}
+                      onClick={filterChange}
+                    >{ob}</Button>
+                  );
+                })}
+              </Elements>
+            );
+          })}
         </Row>
       </Row>
     </FilterLayout>

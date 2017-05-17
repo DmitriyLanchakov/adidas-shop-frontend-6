@@ -3,18 +3,23 @@ import {
   Price, ProductLink, ImageLayout, ItemLayout,
 } from './styled-component';
 import ProductLabel from '../../label';
-import itemPhoto from '../../../../assets/img/bitmap.jpg';
 
-const CatalogItem = () => {
+type Props = {
+  photo: string,
+  price: number,
+  sale: boolean,
+  id: number,
+}
+const CatalogItem = ({ photo, price, sale, id }: Props) => {
   return (
     <div role="listitem">
       <ItemLayout role="treeitem">
-        <ProductLabel name="sale" />
+        {sale && <ProductLabel name="sale" />}
         <ImageLayout>
-          <img src={itemPhoto} alt="картинка" draggable="false" />
+          <img src={photo} alt="картинка" draggable="false" />
         </ImageLayout>
         <Price>
-          <ProductLink to="/item" inShop money="before" >170</ProductLink>
+          <ProductLink to={`/item/${id}`} inShop money="before" >{price}</ProductLink>
         </Price>
       </ItemLayout>
     </div>

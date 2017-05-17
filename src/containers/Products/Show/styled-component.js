@@ -7,9 +7,9 @@ export const Description = styled.div`
   line-height: 1.5;
   font-family: ${props => props.theme.fonts.avenir};
   font-size: 3.3rem;
+  color: #d8d8d8;
   ${media.sm('max')`font-size: 3rem;`}
   p {
-    color: #d8d8d8;
     &::selection { color: black; background-color: #e3e3e3; }
   }
   strong, b {
