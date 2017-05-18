@@ -12,7 +12,8 @@ const SubImages = ({ active }: Props) => {
       <img
         src={img}
         role="presentation"
-        alt="картинка" draggable="false"
+        alt="картинка"
+        draggable="false"
       />
     </SubImage>
   );

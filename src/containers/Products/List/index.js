@@ -29,14 +29,14 @@ class Home extends Component {
     });
   }
 
-  selectFilter: Function;
+  selectFilter: () => void;
   selectFilter(e: Object) { // eslint-disable-line
     type Filter = {
       dataset: { fname: string, value: string }
     };
     const { dataset: { fname, value } }: Filter = e.target;
     e.target.classList.toggle('is-active');
-    console.log(fname, value);
+    console.log(fname, value); // eslint-disable-line
   }
   render() {
     const { products, fetching } = this.state;
@@ -57,7 +57,8 @@ class Home extends Component {
                 <Col xs={12} sm={6} md={4} lg={4} key={Math.random()}>
                   <CatalogItem
                     photo={'../../../../assets/img/bitmap.jpg'}
-                    price={170} sale
+                    price={170}
+                    sale
                     id={12}
                   />
                 </Col>

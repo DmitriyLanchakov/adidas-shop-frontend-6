@@ -13,4 +13,5 @@ notifications:
 
 script:
   - npm install
+  - npm run flow:build
   - npm run lint

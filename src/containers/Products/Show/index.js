@@ -11,7 +11,17 @@ import productimg from '../../../assets/img/bitmap-copy.png';
 import Preloader from '../../../components/preloader';
 import { FETCH_PRODUCTS_URL } from '../../../services/api';
 
-class CatalogItem extends Component {
+type Props = {
+  match: {
+    params: { id: number }
+  }
+}
+type State = {
+  item: Object,
+  fetching: boolean,
+}
+
+class CatalogItem extends Component<void, Props, State> {
   constructor() {
     super();
     this.state = {
@@ -19,13 +29,9 @@ class CatalogItem extends Component {
       fetching: true,
     };
   }
-  state: { item: Object, fetching: boolean }
-
+  state: State;
   async componentDidMount(): any {
-    type Params = {
-      match: { params: { id: number } };
-    };
-    const { match: { params: { id } } }: Params = this.props;
+    const { match: { params: { id } } } = this.props;
     const res = await fetch(`${FETCH_PRODUCTS_URL}/${id}`);
     const item = await res.json();
     await this.setStateAsync({ item, fetching: false });
@@ -58,7 +64,8 @@ class CatalogItem extends Component {
               <img
                 src={productimg}
                 role="presentation"
-                alt="картинка" draggable="false"
+                alt="картинка"
+                draggable="false"
               />
             </Image>
           </Row>

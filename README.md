@@ -2,22 +2,22 @@
 
 # Install
 ```sh
-$ yarn
-$ yarn start
+$ npm install
+$ npm run start
 ```
 
 ## Tests
 ```sh
-$ yarn
-$ yarn lint # eslint by airbnb config
-$ yarn test # jsdom watch mode ( a | q )
-$ yarn flow:build
+$ npm install
+$ npm run lint # eslint by airbnb config
+$ npm run test # jsdom watch mode ( a | q )
+$ npm run flow:build
 ```
 
 ## Prepush
 ```sh
-$ yarn prepush
-# run lint && flow:typed && yarn deploy
+$ npm run prepush
+# run lint && flow:build && npm run deploy
 # deploy url wiry-cast.surge.sh
 ```
 
@@ -25,6 +25,7 @@ $ yarn prepush
 [flow-typed](https://github.com/flowtype/flow-typed/tree/master/definitions/npm)
 ```sh
 $ npm install -g flow-typed
+$ npm run flow:build
 $ flow-typed install styled-components@1.4
 # flow-typed install <Name>@<version>
 ```

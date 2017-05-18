@@ -1,12 +1,20 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled, { keyframes } from 'styled-components';
 
+const fadeIn = keyframes`
+  0% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+`;
+
 export const Container = styled.div`
   position: fixed;
   height: 100%;
   width: calc(100% - 39.5rem);
   left: 39.5rem;
   top: 0;
+  ${''/* BUG: Blinking preloader when loading a page quickly */}
+  animation: ${fadeIn} 1s linear;
   background-color: rgba(255, 255, 255, 0.58);
   z-index: 2;
 `;

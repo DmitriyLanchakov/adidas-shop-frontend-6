@@ -36,8 +36,9 @@ const CatalogFilter = ({ filterChange }: Props) => {
                   return (
                     <Button
                       key={ob}
-                      role="button" type="button"
-                      data-fname={fi.get} data-value={ob}
+                      type="button"
+                      data-fname={fi.get}
+                      data-value={ob}
                       onClick={filterChange}
                     >{ob}</Button>
                   );

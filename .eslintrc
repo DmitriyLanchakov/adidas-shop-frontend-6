@@ -1,6 +1,6 @@
 {
-  parser: "babel-eslint",
-  "extends": 'airbnb',
+  "parser": "babel-eslint",
+  "extends": ["airbnb", 'plugin:jsx-a11y/recommended'],
   "rules": {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'arrow-body-style': [2, 'always'],
@@ -12,7 +12,7 @@
     "browser": true,
     "jasmine": true
   },
-  "plugins": ["compat"],
+  "plugins": ["compat", "react", "jsx-a11y", "import"],
   "settings": {
     "targets": ['chrome >= 50', 'firefox', 'edge', 'ie >= 9', 'safari >= 9'],
     "coverage": false,
