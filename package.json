@@ -5,12 +5,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && surge -p build -d wiry-cast.surge.sh",
+    "deploy": "yarn build && surge -p build -d wiry-cast.surge.sh",
     "flow": "./node_modules/.bin/flow ./src",
     "flow:build": "bash ./bin/flow.sh",
     "lint": "./node_modules/.bin/eslint ./src --ext=js,jsx",
     "test": "react-scripts test --env=jsdom",
-    "prepush": "npm run lint && npm run flow:build && npm run deploy",
+    "prepush": "yarn lint && yarn flow:build && yarn deploy",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -26,13 +26,13 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "flow-bin": "^0.46.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "1.0.0"
   },
   "repository": {
     "type": "git",
@@ -42,8 +42,5 @@
     "name": "Strelkov Dmitry",
     "email": "stk-dmitry@ya.ru",
     "url": "https://github.com/stk-dmitry"
-  },
-  "peerDependencies": {
-    "flow-typed": "^2.1.2"
   }
 }

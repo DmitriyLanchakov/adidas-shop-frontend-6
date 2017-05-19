@@ -6,24 +6,42 @@ import { Hr, Main } from './styled-component';
 import Preloader from '../../../components/preloader';
 import { FETCH_PRODUCTS_URL } from '../../../services/api';
 
-class Home extends Component {
+type State = {
+  products: Object,
+  fetching: boolean,
+  error: boolean,
+}
+type Filter = {
+  dataset: {
+    fname: string,
+    value: string,
+  },
+}
+
+class Home extends Component<void, void, State> {
   constructor() {
     super();
     this.state = {
       products: {},
       fetching: true,
+      error: false,
     };
     this.selectFilter = this.selectFilter.bind(this);
   }
-  state: { products: Object, fetching: boolean }
+  state: State;
 
   async componentDidMount(): any {
-    const res = await fetch(FETCH_PRODUCTS_URL);
-    const products = await res.json();
-    await this.setStateAsync({ products, fetching: false });
+    try {
+      const res = await fetch(FETCH_PRODUCTS_URL);
+      const products = await res.json();
+      await this.setStateAsync({ products, fetching: false });
+    } catch (err) {
+      this.setStateAsync({ error: true });
+      throw Error(err);
+    }
   }
 
-  setStateAsync(state: Object) {
+  setStateAsync(state: Object): Promise<*> {
     return new Promise(resolve => {
       this.setState(state, resolve);
     });
@@ -31,16 +49,14 @@ class Home extends Component {
 
   selectFilter: () => void;
   selectFilter(e: Object) { // eslint-disable-line
-    type Filter = {
-      dataset: { fname: string, value: string }
-    };
     const { dataset: { fname, value } }: Filter = e.target;
     e.target.classList.toggle('is-active');
     console.log(fname, value); // eslint-disable-line
   }
   render() {
-    const { products, fetching } = this.state;
+    const { products, fetching, error } = this.state;
 
+    if (error) return <div>Ошибка загрузке</div>;
     if (fetching) return <Preloader />;
     if (!fetching && !products.length) return <div>0 - Товаров</div>;
 

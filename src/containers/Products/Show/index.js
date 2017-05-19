@@ -19,6 +19,7 @@ type Props = {
 type State = {
   item: Object,
   fetching: boolean,
+  error: boolean,
 }
 
 class CatalogItem extends Component<void, Props, State> {
@@ -27,24 +28,33 @@ class CatalogItem extends Component<void, Props, State> {
     this.state = {
       item: {},
       fetching: true,
+      error: false,
     };
   }
   state: State;
   async componentDidMount(): any {
-    const { match: { params: { id } } } = this.props;
-    const res = await fetch(`${FETCH_PRODUCTS_URL}/${id}`);
-    const item = await res.json();
-    await this.setStateAsync({ item, fetching: false });
+    try {
+      const { match: { params: { id } } } = this.props;
+      const res = await fetch(`${FETCH_PRODUCTS_URL}/${id}`);
+      const item = await res.json();
+      await this.setStateAsync({ item, fetching: false });
+    } catch (err) {
+      this.setStateAsync({ error: true });
+      throw Error(err);
+    }
   }
-  setStateAsync(state: Object) {
+  setStateAsync(state: Object): Promise<*> {
     return new Promise(resolve => {
       this.setState(state, resolve);
     });
   }
 
   render() {
-    const { item, fetching } = this.state;
+    const { item, fetching, error } = this.state;
+
+    if (error) return <div>Ошибка загрузке</div>;
     if (fetching) return <Preloader />;
+
     return (
       <main role="main" aria-label="Основная часть">
         <ProductLayout>

@@ -9,21 +9,17 @@ import s from './config';
  * @param {string} prefix - min | max prefix size
  * @return {object} css property
  */
-// eslint-disable-next-line import/prefer-default-export
+/* eslint-disable arrow-body-style, import/prefer-default-export */
 export const media = Object.keys(s.media).reduce((opt, point) => {
   const query = s.media[point];
   const cssBody = opt;
-  // eslint-disable-next-line arrow-body-style
   cssBody[point] = prefix => (...args) => {
-    // if (!prefix || ['min', 'max'].indexOf(prefix) < 0) {
-    if (!prefix || !['min', 'max'].includes(prefix)) {
+    if (!prefix || ['min', 'max'].indexOf(prefix) < 0) {
       // eslint-disable-next-line no-console
       console.warn('The prefix value must be `min` or `max`');
     }
     return css`
-      @media (${prefix}-width: ${query}) {
-        ${css(...args)}
-      }
+      @media (${prefix}-width: ${query}) { ${css(...args)} }
     `;
   };
   return cssBody;
