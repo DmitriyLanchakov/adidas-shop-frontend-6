@@ -54,8 +54,6 @@ export const NavbarLink = styled(({
 export const NavbarLayout = styled.nav`
   width: 100%;
   text-align: center;
-  > nav { margin: 3rem 0; }
-  ${media.sm('min')`
-    margin: 15vh 0 0;
-  `}
+  ${media.sm('min')`${props => props.hasChildren || 'margin: 15vh 0 0;'}`}
+  ${props => props.hasChildren && 'margin: 3rem 0;'}
 `;

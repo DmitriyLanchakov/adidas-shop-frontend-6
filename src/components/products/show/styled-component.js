@@ -67,8 +67,11 @@ export const Badge = styled.div`
 export const SubImage = styled.div`
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   border: 0.5rem solid transparent;
-  border-color: ${props => (props.isActive ? '#e7e7e7' : '')};
+  &.is-active {
+    border-color: #e7e7e7;
+  }
 
   img { width: 100%; }
 `;

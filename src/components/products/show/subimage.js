@@ -2,16 +2,23 @@
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
 import { SubImage } from './styled-component';
-import image from '../../../assets/img/bitmap-copy.png';
+
 
 type Props = {
   isActive: boolean,
+  image: string,
+  numb: number,
+  click: Function,
 }
-const SubImages = ({ isActive }: Props) => {
+const SubImages = ({ isActive, image, click, numb }: Props) => {
   return (
     <Col xs={2}>
-      <SubImage isActive={isActive}>
+      <SubImage
+        onClick={click}
+        className={isActive ? 'is-active' : ''}
+      >
         <img
+          data-key={numb}
           src={image}
           role="presentation"
           alt="картинка"

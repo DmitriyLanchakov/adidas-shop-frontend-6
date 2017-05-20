@@ -5,10 +5,14 @@ import {
   Description, Image, ProductLayout,
   Label, ByNow, HeaderLayout,
 } from './styled-component';
-import { ProductHeader, SubImage } from '../../../components/products/show';
-import productimg from '../../../assets/img/bitmap-copy.png';
 import Preloader from '../../../components/preloader';
+import { ProductHeader, SubImage } from '../../../components/products/show';
 import { FETCH_PRODUCTS_URL } from '../../../services/api';
+
+import image from '../../../assets/img/bitmap-copy.png';
+import imageA from '../../../assets/img/subImage1.jpg';
+
+const subImageArray = [image, imageA, image, imageA, image];
 
 type Props = {
   match: {
@@ -19,6 +23,7 @@ type State = {
   item: Object,
   fetching: boolean,
   error: boolean,
+  imageActive: number,
 }
 
 class CatalogItem extends Component<void, Props, State> {
@@ -28,6 +33,7 @@ class CatalogItem extends Component<void, Props, State> {
       item: {},
       fetching: true,
       error: false,
+      imageActive: 0,
     };
   }
   state: State;
@@ -49,7 +55,11 @@ class CatalogItem extends Component<void, Props, State> {
   }
 
   render() {
-    const { item, fetching, error } = this.state;
+    const { item, fetching, error, imageActive } = this.state;
+
+    const changeActiveImage = (e: Object) => {
+      this.setState({ imageActive: parseFloat(e.target.dataset.key) });
+    };
 
     const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
@@ -76,7 +86,7 @@ class CatalogItem extends Component<void, Props, State> {
           <Row center="xs">
             <Image>
               <img
-                src={productimg}
+                src={subImageArray[imageActive]}
                 role="presentation"
                 alt="картинка"
                 draggable="false"
@@ -85,11 +95,18 @@ class CatalogItem extends Component<void, Props, State> {
           </Row>
 
           <Row center="xs" middle="xs">
-            <SubImage isActive />
-            <SubImage />
-            <SubImage />
-            <SubImage />
-            <SubImage />
+            {subImageArray.map((si, key) => {
+              return (
+                <SubImage
+                  click={changeActiveImage}
+                  image={si}
+                  // eslint-disable-next-line
+                  key={key}
+                  numb={key}
+                  isActive={key === imageActive}
+                />
+              );
+            })}
           </Row>
           <Description dangerouslySetInnerHTML={{ __html: item.body }} />
         </ProductLayout>

@@ -5,6 +5,7 @@ import { CatalogFilter, CatalogItem } from '../../../components/products/list';
 import { Hr, Main } from './styled-component';
 import Preloader from '../../../components/preloader';
 import { FETCH_PRODUCTS_URL } from '../../../services/api';
+import image from '../../../assets/img/bitmap.jpg';
 
 type State = {
   products: Object,
@@ -71,7 +72,7 @@ class Home extends Component<void, void, State> {
               return (
                 <Col xs={12} md={4} lg={4} key={Math.random()}>
                   <CatalogItem
-                    photo={'../../../../assets/img/bitmap.jpg'}
+                    photo={image}
                     price={170}
                     sale
                     id={12}
