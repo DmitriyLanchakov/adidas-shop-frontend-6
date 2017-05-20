@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { Row } from 'react-flexbox-grid';
 import {
   Description, Image, ProductLayout,
-  Price, Label, BtnMoreImage, BtnMore,
-  ByNow,
+  Label, ByNow, HeaderLayout,
 } from './styled-component';
 import { ProductHeader, SubImage } from '../../../components/products/show';
 import productimg from '../../../assets/img/bitmap-copy.png';
@@ -52,6 +51,8 @@ class CatalogItem extends Component<void, Props, State> {
   render() {
     const { item, fetching, error } = this.state;
 
+    const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
     if (error) return <div>Ошибка загрузке</div>;
     if (fetching) return <Preloader />;
 
@@ -59,15 +60,18 @@ class CatalogItem extends Component<void, Props, State> {
       <main role="main" aria-label="Основная часть">
         <ProductLayout>
 
-          <div style={{ position: 'relative' }}>
-            <ProductHeader name="ultra boots" />
-            <Row end="xs" role="math">
-              <Price money="before">170</Price>
-            </Row>
+          <HeaderLayout>
+
+            <ProductHeader
+              name="ultra boots"
+              colors={colors}
+              price={170}
+            />
+
             <Row start="xs">
               <Label default>sale</Label>
             </Row>
-          </div>
+          </HeaderLayout>
 
           <Row center="xs">
             <Image>
@@ -80,17 +84,12 @@ class CatalogItem extends Component<void, Props, State> {
             </Image>
           </Row>
 
-          <Row start="xs" middle="xs">
-            <SubImage active />
+          <Row center="xs" middle="xs">
+            <SubImage isActive />
             <SubImage />
             <SubImage />
             <SubImage />
-            <div className="otherLink">
-              <BtnMoreImage><span /></BtnMoreImage>
-            </div>
-            <div className="otherLink">
-              <BtnMore>see more photos</BtnMore>
-            </div>
+            <SubImage />
           </Row>
           <Description dangerouslySetInnerHTML={{ __html: item.body }} />
         </ProductLayout>

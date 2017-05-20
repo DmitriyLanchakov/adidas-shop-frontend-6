@@ -21,10 +21,13 @@ export const Description = styled.div`
   }
 `;
 
+export const HeaderLayout = styled.div`
+  position: relative;
+`;
+
 export const Image = styled.div`
-  margin-top: -18.5rem;
   img { width: 100% };
-  ${media.sm('max')`margin-top`}
+  ${media.sm('min')`margin-top: -18.5rem;`}
 `;
 
 export const ProductLayout = styled.div`
@@ -38,70 +41,15 @@ export const ProductLayout = styled.div`
   }
 `;
 
-export const Price = styled.div`
-  margin-top: -5rem;
-  font-size: 8rem;
-  text-transform: uppercase;
-  font-family: ${props => props.theme.fonts.ariabold};
-  color: #e2e2e2;
-  ${media.sm('max')`
-    margin-top: 0;
-    padding-right: 1rem;
-    min-height: 8.5rem;
-  `}
-
-  &::${props => props.money} { content: '$'; display: inline-block; }
-`;
-
 export const Label = styled.div`
-  margin-top: -2rem;
   padding: 3rem 2rem;
   position: relative;
   border-radius: 100%;
   font-size: 1.8rem;
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.ariabold};
-
+  ${media.sm('max')`display: none`}
   ${props => props.default && 'color: #fff; background-color: #e3e3e3;'}
-`;
-
-export const BtnMoreImage = styled.div`
-  left: 0;
-  color: #e7e7e7;
-  position: absolute;
-  width: 100%;
-  height: 0.3rem;
-  background-color: currentColor;
-  span {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 1.4rem;
-      left: 0;
-      width: 100%;
-      height: 0.3rem;
-      background-color: currentColor;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0.7rem;
-      left: 0;
-      width: 100%;
-      height: 0.3rem;
-      background-color: currentColor;
-    }
-  }
-`;
-
-export const BtnMore = styled.div`
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: #c0c0c0;
-  max-width: 4rem;
-  padding-left: 2rem;
-  transition: 0.6s;
-  box-shadow: none;
 `;
 
 export const ByNow = styled.div`

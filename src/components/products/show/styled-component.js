@@ -2,6 +2,10 @@
 import styled from 'styled-components';
 import { media } from '../../../styled-components/helpers';
 
+export const InfoGroup = styled.div`
+  text-align: right;
+`;
+
 export const ColorButton = styled.button`
   background: transparent;
   border: 0;
@@ -12,7 +16,22 @@ export const ColorButton = styled.button`
   position: relative;
   margin: 0 0.75rem;
   background-color: ${props => props.color};
-  ${props => props.isActive && 'width: 2.4rem; height: 2.4rem; top: 5px'}
+  &.is-active { box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.15) }
+`;
+
+export const Price = styled.div`
+  font-size: 8rem;
+  text-transform: uppercase;
+  transition: ${props => props.theme.transition};
+  font-family: ${props => props.theme.fonts.ariabold};
+  color: ${props => props.color || '#e2e2e2'};
+  ${media.sm('max')`
+    margin-top: 0;
+    padding-right: 1rem;
+    min-height: 8.5rem;
+  `}
+
+  &::${props => props.money} { content: '$'; display: inline-block; }
 `;
 
 export const TitleLayout = styled.div`
@@ -40,15 +59,13 @@ export const Badge = styled.div`
   font-family: ${props => props.theme.fonts.ariabold};
   text-transform: uppercase;
   padding: 1rem 2rem;
-  background-color: #ff5c5c;
+  transition: ${props => props.theme.transition};
+  background-color: ${props => props.color || '#ff5c5c'};
   margin-left: 3rem;
 `;
 
 export const SubImage = styled.div`
-  flex-basis: 15%;
   position: relative;
-  max-width: 17rem;
-  max-height: 17rem;
   overflow: hidden;
   border: 0.5rem solid transparent;
   border-color: ${props => (props.isActive ? '#e7e7e7' : '')};

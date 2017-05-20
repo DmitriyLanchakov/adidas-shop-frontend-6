@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { media } from '../../styled-components/helpers';
 
 export const NavbarLink = styled(({
   hasSubnav, isSubitem, ...rest
@@ -51,8 +52,10 @@ export const NavbarLink = styled(({
 `;
 
 export const NavbarLayout = styled.nav`
-  margin: 15vh 0 0;
   width: 100%;
   text-align: center;
   > nav { margin: 3rem 0; }
+  ${media.sm('min')`
+    margin: 15vh 0 0;
+  `}
 `;

@@ -19,6 +19,12 @@ type Filter = {
 }
 
 class Home extends Component<void, void, State> {
+  static selectFilter(e: Object) {
+    const { dataset: { fname, value } }: Filter = e.target;
+    e.target.classList.toggle('is-active');
+    // eslint-disable-next-line no-console
+    console.log(fname, value);
+  }
   constructor() {
     super();
     this.state = {
@@ -26,7 +32,6 @@ class Home extends Component<void, void, State> {
       fetching: true,
       error: false,
     };
-    this.selectFilter = this.selectFilter.bind(this);
   }
   state: State;
 
@@ -47,12 +52,6 @@ class Home extends Component<void, void, State> {
     });
   }
 
-  selectFilter: () => void;
-  selectFilter(e: Object) { // eslint-disable-line
-    const { dataset: { fname, value } }: Filter = e.target;
-    e.target.classList.toggle('is-active');
-    console.log(fname, value); // eslint-disable-line
-  }
   render() {
     const { products, fetching, error } = this.state;
 
@@ -63,14 +62,14 @@ class Home extends Component<void, void, State> {
     return (
       <div>
         <header>
-          <CatalogFilter filterChange={this.selectFilter} />
+          <CatalogFilter filterChange={this.constructor.selectFilter} />
         </header>
         <Hr />
         <Main role="main" aria-label="Основная часть">
           <Row start="xs" role="group">
             {[...Array(15)].map(() => {
               return (
-                <Col xs={12} sm={6} md={4} lg={4} key={Math.random()}>
+                <Col xs={12} md={4} lg={4} key={Math.random()}>
                   <CatalogItem
                     photo={'../../../../assets/img/bitmap.jpg'}
                     price={170}

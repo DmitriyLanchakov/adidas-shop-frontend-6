@@ -1,21 +1,24 @@
 // @flow
 import React from 'react';
+import { Col } from 'react-flexbox-grid';
 import { SubImage } from './styled-component';
-import img from '../../../assets/img/bitmap-copy.png';
+import image from '../../../assets/img/bitmap-copy.png';
 
 type Props = {
-  active: boolean,
+  isActive: boolean,
 }
-const SubImages = ({ active }: Props) => {
+const SubImages = ({ isActive }: Props) => {
   return (
-    <SubImage active={active}>
-      <img
-        src={img}
-        role="presentation"
-        alt="картинка"
-        draggable="false"
-      />
-    </SubImage>
+    <Col xs={2}>
+      <SubImage isActive={isActive}>
+        <img
+          src={image}
+          role="presentation"
+          alt="картинка"
+          draggable="false"
+        />
+      </SubImage>
+    </Col>
   );
 };
 
