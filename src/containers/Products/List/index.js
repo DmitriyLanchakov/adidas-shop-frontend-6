@@ -12,19 +12,12 @@ type State = {
   fetching: boolean,
   error: boolean,
 }
-type Filter = {
-  dataset: {
-    fname: string,
-    value: string,
-  },
-}
 
 class Home extends Component<void, void, State> {
-  static selectFilter(e: Object) {
-    const { dataset: { fname, value } }: Filter = e.target;
-    e.target.classList.toggle('is-active');
+  static selectFilter(data: Object) {
+    // label: "size", value: 37
     // eslint-disable-next-line no-console
-    console.log(fname, value);
+    console.log(data);
   }
   constructor() {
     super();
@@ -36,21 +29,15 @@ class Home extends Component<void, void, State> {
   }
   state: State;
 
-  async componentDidMount(): any {
-    try {
-      const res = await fetch(FETCH_PRODUCTS_URL);
-      const products = await res.json();
-      await this.setStateAsync({ products, fetching: false });
-    } catch (err) {
-      this.setStateAsync({ error: true });
-      throw Error(err);
-    }
-  }
-
-  setStateAsync(state: Object): Promise<*> {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
+  componentDidMount() {
+    fetch(FETCH_PRODUCTS_URL)
+      .then(resp => { return resp.json(); })
+      .then(products => {
+        return this.setState({ products, fetching: false });
+      })
+      .catch(() => {
+        return this.setState({ error: true });
+      });
   }
 
   render() {
@@ -63,7 +50,7 @@ class Home extends Component<void, void, State> {
     return (
       <div>
         <header>
-          <CatalogFilter filterChange={this.constructor.selectFilter} />
+          <CatalogFilter onChange={this.constructor.selectFilter} />
         </header>
         <Hr />
         <Main role="main" aria-label="Основная часть">

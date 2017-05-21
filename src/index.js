@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './components/layout';
 import StyleConfig from './styled-components/config';
-import registerServiceWorker from './registerServiceWorker';
 
 import ProductList from './containers/Products/List';
 import ProductShow from './containers/Products/Show';
@@ -29,4 +28,3 @@ render(
   </BrowserRouter>,
   document.getElementById('root'),
 );
-registerServiceWorker();

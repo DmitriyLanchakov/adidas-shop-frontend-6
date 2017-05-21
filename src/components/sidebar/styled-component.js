@@ -13,6 +13,38 @@ export const LogoLayout = styled.div`
   `}
 `;
 
+export const MenuToggleBox = styled.span`
+  width: 5rem;
+  height: 2.4rem;
+  display: inline-block;
+  position: relative;
+`;
+export const MenuToggleInnder = styled.span`
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  &,
+  &::before,
+  &::after {
+    width: 5rem;
+    height: 0.4rem;
+    background-color: #fff;
+    position: absolute;
+  }
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+  &::before {
+    top: -1.3rem;
+  }
+  &::after {
+    bottom: -1.3rem;
+  }
+`;
 export const MenuToggle = styled.button`
   padding: 1.5rem 1.5rem;
   display: inline-block;
@@ -27,62 +59,6 @@ export const MenuToggle = styled.button`
   border: 0;
   margin: 0;
   overflow: visible;
-
-  .box {
-    width: 5rem;
-    height: 2.4rem;
-    display: inline-block;
-    position: relative;
-    .inner {
-      display: block;
-      top: 50%;
-      margin-top: -2px;
-      transition-duration: 0.22s;
-      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      &,
-      &::before,
-      &::after {
-        width: 5rem;
-        height: 0.4rem;
-        background-color: #fff;
-        position: absolute;
-        transition-property: transform;
-        transition-duration: 0.15s;
-        transition-timing-function: ease;
-      }
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-      }
-      &::before {
-        top: -1.3rem;
-        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-      }
-      &::after {
-        bottom: -1.3rem;
-        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      }
-    }
-  }
-
-  &.is-active {
-    .inner {
-      transform: rotate(225deg);
-      transition-delay: 0.12s;
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      &::before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-      }
-      &::after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
-  }
 `;
 
 export const MobileTogglerNav = styled.div`

@@ -16,7 +16,7 @@ export const ColorButton = styled.button`
   position: relative;
   margin: 0 0.75rem;
   background-color: ${props => props.color};
-  &.is-active { box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.15) }
+  ${props => props.isActive && 'box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.15)'}
 `;
 
 export const Price = styled.div`
@@ -69,9 +69,7 @@ export const SubImage = styled.div`
   overflow: hidden;
   cursor: pointer;
   border: 0.5rem solid transparent;
-  &.is-active {
-    border-color: #e7e7e7;
-  }
+  ${props => props.isActive && 'border-color: #e7e7e7;'}
 
   img { width: 100%; }
 `;

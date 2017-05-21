@@ -14,7 +14,7 @@ type Props = {
 type State = {
   name: string,
   activeColor?: string,
-  colors: Object,
+  dataColors: Object,
   price: number,
 }
 
@@ -23,7 +23,7 @@ class ItemHeader extends Component<void, Props, State> {
     super(props);
     this.state = {
       name: props.name,
-      colors: props.colors,
+      dataColors: props.colors,
       price: props.price,
       activeColor: '',
     };
@@ -31,13 +31,11 @@ class ItemHeader extends Component<void, Props, State> {
   }
   state: State;
   changeColor: Function;
-  changeColor(e: Object) {
-    this.setState({
-      activeColor: e.target.getAttribute('color'),
-    });
+  changeColor(color: string) {
+    this.setState({ activeColor: color });
   }
   render() {
-    const { name, colors, price, activeColor } = this.state;
+    const { name, dataColors, price, activeColor } = this.state;
     return (
       <Row between="xs">
         <TitleLayout>
@@ -45,17 +43,16 @@ class ItemHeader extends Component<void, Props, State> {
         </TitleLayout>
         <InfoGroup>
           <Row start="sm" middle="xs">
-            {colors.map((e, key) => {
-              const active = `${e === activeColor ? 'is' : 'no'}-active`;
+            {dataColors.map((color, key) => {
               return (
                 <ColorButton
                   // eslint-disable-next-line react/no-array-index-key
                   key={key}
                   role="button"
                   type="button"
-                  className={active}
-                  onClick={this.changeColor}
-                  color={e}
+                  isActive={color === activeColor}
+                  onClick={() => { return this.changeColor(color); }}
+                  color={color}
                 />
               );
             })}

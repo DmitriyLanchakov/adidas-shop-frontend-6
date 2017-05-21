@@ -6,19 +6,19 @@ import {
 } from './styled-component';
 
 type Props = {
-  filterChange: Function,
+  onChange: Function,
 }
 
 const filters: Object = [
   {
-    id: 1, name: null, get: 'gender', obj: ['Women', 'Men'],
+    id: 1, name: null, label: 'gender', values: ['Women', 'Men'],
   },
   {
-    id: 2, name: 'size', get: 'size', obj: [37, 38, 39, 40, 41],
+    id: 2, name: 'size', label: 'size', values: [37, 38, 39, 40, 41],
   },
 ];
-
-const CatalogFilter = ({ filterChange }: Props) => {
+// onChange
+const CatalogFilter = ({ onChange }: Props) => {
   return (
     <FilterLayout action="#" method="get" role="search">
       <Row start="xs">
@@ -32,14 +32,14 @@ const CatalogFilter = ({ filterChange }: Props) => {
             return (
               <Elements role="listbox" key={fi.id}>
                 {fi.name && <Name>{fi.name}</Name>}
-                {fi.obj.map(ob => {
+                {fi.values.map(ob => {
                   return (
                     <Button
                       key={ob}
                       type="button"
-                      data-fname={fi.get}
-                      data-value={ob}
-                      onClick={filterChange}
+                      onClick={() => {
+                        return onChange({ label: fi.label, value: ob });
+                      }}
                     >{ob}</Button>
                   );
                 })}

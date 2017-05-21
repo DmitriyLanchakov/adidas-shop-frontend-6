@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { Row } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import {
   Description, Image, ProductLayout,
   Label, ByNow, HeaderLayout,
@@ -13,11 +13,10 @@ import image from '../../../assets/img/bitmap-copy.png';
 import imageA from '../../../assets/img/subImage1.jpg';
 
 const subImageArray = [image, imageA, image, imageA, image];
+const colorsData = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
 type Props = {
-  match: {
-    params: { id: number }
-  }
+  match: Object,
 }
 type State = {
   item: Object,
@@ -35,33 +34,28 @@ class CatalogItem extends Component<void, Props, State> {
       error: false,
       imageActive: 0,
     };
+    this.changeActiveImage = this.changeActiveImage.bind(this);
   }
   state: State;
-  async componentDidMount(): any {
-    try {
-      const { match: { params: { id } } } = this.props;
-      const res = await fetch(`${FETCH_PRODUCTS_URL}/${id}`);
-      const item = await res.json();
-      await this.setStateAsync({ item, fetching: false });
-    } catch (err) {
-      this.setStateAsync({ error: true });
-      throw Error(err);
-    }
+  componentDidMount() {
+    const { match: { params: { id } } } = this.props;
+    fetch(`${FETCH_PRODUCTS_URL}/${id}`)
+      .then(resp => { return resp.json(); })
+      .then(item => {
+        return this.setState({ item, fetching: false });
+      })
+      .catch(() => {
+        return this.setState({ error: true });
+      });
   }
-  setStateAsync(state: Object): Promise<*> {
-    return new Promise(resolve => {
-      this.setState(state, resolve);
-    });
+  props: Props;
+  changeActiveImage: Function;
+  changeActiveImage(keyImage: number) {
+    this.setState({ imageActive: parseFloat(keyImage) });
   }
 
   render() {
     const { item, fetching, error, imageActive } = this.state;
-
-    const changeActiveImage = (e: Object) => {
-      this.setState({ imageActive: parseFloat(e.target.dataset.key) });
-    };
-
-    const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
     if (error) return <div>Ошибка загрузке</div>;
     if (fetching) return <Preloader />;
@@ -74,7 +68,7 @@ class CatalogItem extends Component<void, Props, State> {
 
             <ProductHeader
               name="ultra boots"
-              colors={colors}
+              colors={colorsData}
               price={170}
             />
 
@@ -97,14 +91,15 @@ class CatalogItem extends Component<void, Props, State> {
           <Row center="xs" middle="xs">
             {subImageArray.map((si, key) => {
               return (
-                <SubImage
-                  click={changeActiveImage}
-                  image={si}
-                  // eslint-disable-next-line
-                  key={key}
-                  numb={key}
-                  isActive={key === imageActive}
-                />
+                // eslint-disable-next-line
+                <Col xs={2} key={key}>
+                  <SubImage
+                    changeActiveImage={this.changeActiveImage}
+                    image={si}
+                    numb={key}
+                    isActive={key === imageActive}
+                  />
+                </Col>
               );
             })}
           </Row>

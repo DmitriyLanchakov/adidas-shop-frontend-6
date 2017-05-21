@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { Col } from 'react-flexbox-grid';
 import { SubImage } from './styled-component';
 
 
@@ -8,24 +7,22 @@ type Props = {
   isActive: boolean,
   image: string,
   numb: number,
-  click: Function,
+  changeActiveImage: Function,
 }
-const SubImages = ({ isActive, image, click, numb }: Props) => {
+const SubImages = ({ isActive, image, changeActiveImage, numb }: Props) => {
   return (
-    <Col xs={2}>
-      <SubImage
-        onClick={click}
-        className={isActive ? 'is-active' : ''}
-      >
-        <img
-          data-key={numb}
-          src={image}
-          role="presentation"
-          alt="картинка"
-          draggable="false"
-        />
-      </SubImage>
-    </Col>
+    <SubImage
+      onClick={() => { return changeActiveImage(numb); }}
+      isActive={isActive}
+    >
+      <img
+        data-key={numb}
+        src={image}
+        role="presentation"
+        alt="картинка"
+        draggable="false"
+      />
+    </SubImage>
   );
 };
 
