@@ -2,14 +2,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { media } from '../../styled-components/helpers';
 
 export const NavbarLink = styled(({
-  hasSubnav, isSubitem, ...rest
+  isOpen, hasSubnav, isSubitem, ...rest
 }) => <NavLink {...rest} />)`
   font-family: ${props => props.theme.fonts.andale};
   color: ${props => props.theme.colors.navbarSubLink};
-  transition: ${props => props.theme.transition};
   margin: 1.5rem 0;
   color: white;
   opacity: 0.2;
@@ -23,14 +21,13 @@ export const NavbarLink = styled(({
     position: relative;
     &::after {
       content: "";
-      top: 1.2rem;
+      top: ${props.isOpen ? '0.8rem' : '1.2rem'};
       margin-left: 1rem;
       width: .7rem; height: .7rem;
-      transition: transform .6s;
       position: absolute;
       border-top: .3rem solid currentColor;
       border-right: .3rem solid currentColor;
-      transform: rotate(-40deg);
+      transform: ${props.isOpen ? 'rotate(135deg)' : 'rotate(-45deg)'};
     }
   `};
 
@@ -54,6 +51,5 @@ export const NavbarLink = styled(({
 export const NavbarLayout = styled.nav`
   width: 100%;
   text-align: center;
-  ${media.sm('min')`${props => props.hasChildren || 'margin: 15vh 0 0;'}`}
   ${props => props.hasChildren && 'margin: 3rem 0;'}
 `;

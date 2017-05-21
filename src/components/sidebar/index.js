@@ -10,9 +10,40 @@ import Logo from '../logo';
 import Navbar from '../navbar';
 import SearchForm from '../searchForm';
 
-type State = {
-  isNavbarOpen: boolean,
-};
+type State = { isNavbarOpen: boolean };
+
+const menu = [
+  {
+    id: 1,
+    name: 'FOOTBALL',
+    slug: '/',
+    children: [
+      { id: 2, name: 'shoes', slug: '/item/1' },
+      { id: 3, name: 'clothing', slug: '/item/2' },
+      { id: 4, name: 'accesories', slug: '/item/3' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'RUNNING',
+    slug: '/running',
+    children: [
+      { id: 2, name: 'shoes', slug: '/item/1' },
+      { id: 3, name: 'clothing', slug: '/item/2' },
+      { id: 4, name: 'accesories', slug: '/item/3' },
+    ],
+  },
+  {
+    id: 3,
+    name: 'BASKETBALL',
+    slug: '/basketball',
+    children: [
+      { id: 2, name: 'shoes', slug: '/item/1' },
+      { id: 3, name: 'clothing', slug: '/item/2' },
+      { id: 4, name: 'accesories', slug: '/item/3' },
+    ],
+  },
+];
 
 class Sidebar extends Component<void, any, State> {
   constructor() {
@@ -72,7 +103,10 @@ class Sidebar extends Component<void, any, State> {
           <SearchLayout>
             <SearchForm />
           </SearchLayout>
-          <Navbar />
+          {menu.map((nav, key) => {
+            // eslint-disable-next-line react/no-array-index-key
+            return <Navbar key={key} menuData={nav} />;
+          })}
         </NavbarLayout>
       </div>
     );

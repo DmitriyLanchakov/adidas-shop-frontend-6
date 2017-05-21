@@ -116,6 +116,7 @@ export const NavbarLayout = styled.div`
 
 export const SearchLayout = styled.div`
   padding: 0 2rem;
+  ${media.sm('min')`margin: 0 0 15vh;`}
   form {
     position: relative;
   }
