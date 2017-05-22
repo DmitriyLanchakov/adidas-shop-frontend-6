@@ -8,23 +8,17 @@ import {
 
 type Props = {
   name: string,
-  colors: Object,
+  dataColors: Object,
   price: number,
 };
 type State = {
-  name: string,
   activeColor?: string,
-  dataColors: Object,
-  price: number,
 }
 
 class ItemHeader extends Component<void, Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      name: props.name,
-      dataColors: props.colors,
-      price: props.price,
       activeColor: '',
     };
     this.changeColor = this.changeColor.bind(this);
@@ -35,7 +29,8 @@ class ItemHeader extends Component<void, Props, State> {
     this.setState({ activeColor: color });
   }
   render() {
-    const { name, dataColors, price, activeColor } = this.state;
+    const { name, dataColors, price } = this.props;
+    const { activeColor } = this.state;
     return (
       <div>
         <Row between="xs">
