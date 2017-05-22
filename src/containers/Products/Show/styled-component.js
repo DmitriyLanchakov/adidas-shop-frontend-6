@@ -41,17 +41,6 @@ export const ProductLayout = styled.div`
   }
 `;
 
-export const Label = styled.div`
-  padding: 3rem 2rem;
-  position: relative;
-  border-radius: 100%;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  font-family: ${props => props.theme.fonts.ariabold};
-  ${media.sm('max')`display: none`}
-  ${props => props.default && 'color: #fff; background-color: #e3e3e3;'}
-`;
-
 export const ByNow = styled.div`
   text-align: center;
   @supports (position: sticky) {

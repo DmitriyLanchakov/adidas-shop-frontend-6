@@ -60,7 +60,7 @@ export const Badge = styled.div`
   text-transform: uppercase;
   padding: 1rem 2rem;
   transition: ${props => props.theme.transition};
-  background-color: ${props => props.color || '#ff5c5c'};
+  background-color: #ff5c5c;
   margin-left: 3rem;
 `;
 
@@ -72,4 +72,16 @@ export const SubImage = styled.div`
   ${props => props.isActive && 'border-color: #e7e7e7;'}
 
   img { width: 100%; }
+`;
+
+export const Label = styled.div`
+  padding: 3rem 2rem;
+  position: relative;
+  border-radius: 100%;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: ${props => props.theme.fonts.ariabold};
+  ${media.sm('max')`display: none`}
+  color: #fff;
+  background-color: ${props => props.color || '#e3e3e3'};
 `;

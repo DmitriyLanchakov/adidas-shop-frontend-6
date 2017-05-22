@@ -21,13 +21,13 @@ export const NavbarLink = styled(({
     position: relative;
     &::after {
       content: "";
-      top: ${props.isOpen ? '0.8rem' : '1.2rem'};
+      top: ${props.isOpen ? '1.2' : '0.8'}rem;
       margin-left: 1rem;
       width: .7rem; height: .7rem;
       position: absolute;
       border-top: .3rem solid currentColor;
       border-right: .3rem solid currentColor;
-      transform: ${props.isOpen ? 'rotate(135deg)' : 'rotate(-45deg)'};
+      transform: ${props.isOpen ? 'rotate(-45deg)' : 'rotate(135deg)'};
     }
   `};
 

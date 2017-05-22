@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import {
   Description, Image, ProductLayout,
-  Label, ByNow, HeaderLayout,
+  ByNow, HeaderLayout,
 } from './styled-component';
 import Preloader from '../../../components/preloader';
 import { ProductHeader, SubImage } from '../../../components/products/show';
@@ -72,9 +72,6 @@ class CatalogItem extends Component<void, Props, State> {
               price={170}
             />
 
-            <Row start="xs">
-              <Label default>sale</Label>
-            </Row>
           </HeaderLayout>
 
           <Row center="xs">
