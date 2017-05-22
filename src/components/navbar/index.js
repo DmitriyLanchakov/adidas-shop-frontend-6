@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { NavbarLayout, NavbarLink } from './styled-component';
 
-type Props = {
-  menuData: Object,
-}
+type Props = { nav: Object }
 type State = {
-  nav: {
-    id: number,
-    name: string,
-    slug: string,
-    children: Object,
-  },
   isParentNavActive: boolean,
   isSubnavOpen: boolean,
 }
@@ -20,7 +12,6 @@ class Navbar extends Component<void, Props, State> {
     this.state = {
       isSubnavOpen: false,
       isParentNavActive: false,
-      nav: props.menuData,
     };
     this.toggleSubnav = this.toggleSubnav.bind(this);
   }
@@ -32,17 +23,18 @@ class Navbar extends Component<void, Props, State> {
     }));
   }
   render() {
-    const { nav, isSubnavOpen, isParentNavActive } = this.state;
+    const { nav } = this.props;
+    const { isSubnavOpen, isParentNavActive } = this.state;
     return (
       <NavbarLayout role="navigation" aria-label="меню">
         <div key={nav.id}>
           <NavbarLink
-            to={nav.slug}
+            to={nav.children ? '#' : nav.slug}
             hasSubnav={!!nav.children}
             isOpen={isParentNavActive}
             onClick={this.toggleSubnav}
             role="menuitem"
-            activeClassName="is-active"
+            activeClassName={nav.children ? '' : 'is-active'}
           >{nav.name}</NavbarLink>
           {(nav.children && isSubnavOpen) && <NavbarLayout
             role="navigation"

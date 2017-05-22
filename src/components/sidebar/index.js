@@ -29,9 +29,9 @@ const menu = [
     name: 'RUNNING',
     slug: '/running',
     children: [
-      { id: 2, name: 'shoes', slug: '/item/1' },
-      { id: 3, name: 'clothing', slug: '/item/2' },
-      { id: 4, name: 'accesories', slug: '/item/3' },
+      { id: 2, name: 'shoes', slug: '/item/4' },
+      { id: 3, name: 'clothing', slug: '/item/5' },
+      { id: 4, name: 'accesories', slug: '/item/6' },
     ],
   },
   {
@@ -39,9 +39,9 @@ const menu = [
     name: 'BASKETBALL',
     slug: '/basketball',
     children: [
-      { id: 2, name: 'shoes', slug: '/item/1' },
-      { id: 3, name: 'clothing', slug: '/item/2' },
-      { id: 4, name: 'accesories', slug: '/item/3' },
+      { id: 2, name: 'shoes', slug: '/item/7' },
+      { id: 3, name: 'clothing', slug: '/item/8' },
+      { id: 4, name: 'accesories', slug: '/item/9' },
     ],
   },
 ];
@@ -83,7 +83,7 @@ class Sidebar extends Component<void, any, State> {
           </SearchLayout>
           {menu.map((nav, key) => {
             // eslint-disable-next-line react/no-array-index-key
-            return <Navbar key={key} menuData={nav} />;
+            return <Navbar key={key} nav={nav} />;
           })}
         </NavbarLayout>
       </div>
