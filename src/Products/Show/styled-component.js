@@ -1,6 +1,6 @@
 /* eslint arrow-body-style: ["error", "as-needed"] */
 import styled from 'styled-components';
-import { media } from '../../../styled-components/helpers';
+import { media } from '../../styled-components/helpers';
 
 export const Description = styled.div`
   margin-top: 3rem;

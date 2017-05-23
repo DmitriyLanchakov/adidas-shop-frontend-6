@@ -8,9 +8,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from './components/layout';
 import StyleConfig from './styled-components/config';
 
-import ProductList from './containers/Products/List';
-import ProductShow from './containers/Products/Show';
-import NotFound from './containers/NotFound';
+import ProductList from './Products/List';
+import ProductShow from './Products/Show';
+import NotFound from './components/NotFound';
 
 import './styled-components/global';
 

@@ -8,14 +8,14 @@ import {
 
 type Props = {
   name: string,
-  dataColors: Object,
+  colors: Object,
   price: number,
 };
 type State = {
   activeColor?: string,
 }
 
-class ItemHeader extends Component<void, Props, State> {
+class Header extends Component<void, Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -29,8 +29,9 @@ class ItemHeader extends Component<void, Props, State> {
     this.setState({ activeColor: color });
   }
   render() {
-    const { name, dataColors, price } = this.props;
+    const { name, colors, price } = this.props;
     const { activeColor } = this.state;
+
     return (
       <div>
         <Row between="xs">
@@ -39,7 +40,7 @@ class ItemHeader extends Component<void, Props, State> {
           </TitleLayout>
           <InfoGroup>
             <Row start="sm" middle="xs">
-              {dataColors.map((color, key) => {
+              {colors.map((color, key) => {
                 return (
                   <ColorButton
                     // eslint-disable-next-line react/no-array-index-key
@@ -64,4 +65,4 @@ class ItemHeader extends Component<void, Props, State> {
     );
   }
 }
-export default ItemHeader;
+export default Header;

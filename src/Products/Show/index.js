@@ -5,12 +5,12 @@ import {
   Description, Image, ProductLayout,
   ByNow, HeaderLayout,
 } from './styled-component';
-import Preloader from '../../../components/preloader';
-import { ProductHeader, SubImage } from '../../../components/products/show';
-import { FETCH_PRODUCTS_URL } from '../../../services/api';
+import Preloader from '../../components/preloader';
+import { Header, SubImage } from './components';
+import { FETCH_PRODUCTS_URL } from '../../services/api';
 
-import image from '../../../assets/img/bitmap-copy.png';
-import imageA from '../../../assets/img/subImage1.jpg';
+import image from '../../assets/img/bitmap-copy.png';
+import imageA from '../../assets/img/subImage1.jpg';
 
 const subImageArray = [image, imageA, image, imageA, image];
 const colorsData = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
@@ -66,7 +66,7 @@ class CatalogItem extends Component<void, Props, State> {
 
           <HeaderLayout>
 
-            <ProductHeader
+            <Header
               name="ultra boots"
               colors={colorsData}
               price={170}

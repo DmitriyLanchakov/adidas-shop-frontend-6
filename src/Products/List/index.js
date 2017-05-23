@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
-import { CatalogFilter, CatalogItem } from '../../../components/products/list';
+import CatalogItem from './item';
+import CatalogFilter from './filter';
 import { Hr, Main } from './styled-component';
-import Preloader from '../../../components/preloader';
-import { FETCH_PRODUCTS_URL } from '../../../services/api';
-import image from '../../../assets/img/bitmap.jpg';
+import Preloader from '../../components/preloader';
+import { FETCH_PRODUCTS_URL } from '../../services/api';
+import image from '../../assets/img/bitmap.jpg';
 
 type State = {
   products: Object,
@@ -15,7 +16,7 @@ type State = {
 
 class Home extends Component<void, void, State> {
   static selectFilter(data: Object) {
-    // label: "size", value: 37
+    // {label: "size", value: 37}
     // eslint-disable-next-line no-console
     console.log(data);
   }

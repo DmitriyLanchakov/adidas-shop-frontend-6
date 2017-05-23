@@ -1,7 +1,7 @@
-import ProductHeader from './header';
+import Header from './header';
 import SubImage from './subimage';
 
 export {
-  ProductHeader,
+  Header,
   SubImage,
 };
