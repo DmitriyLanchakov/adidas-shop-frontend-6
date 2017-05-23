@@ -7,9 +7,9 @@ import {
   MobileTogglerNav, NavbarLayout,
   SearchLayout,
 } from './styled-component';
-import Logo from '../logo';
-import Navbar from '../navbar';
-import SearchForm from '../searchForm';
+import Logo from '../Logo';
+import Navbar from './navbar';
+import SearchForm from './searchForm';
 
 type State = { isNavbarOpen: boolean };
 

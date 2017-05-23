@@ -4,17 +4,12 @@ import { SubImage } from './styled-component';
 
 
 type Props = {
-  isActive: boolean,
   image: string,
   numb: number,
-  changeActiveImage: Function,
 }
-const SubImages = ({ isActive, image, changeActiveImage, numb }: Props) => {
+const SubImages = ({ image, numb }: Props) => {
   return (
-    <SubImage
-      onClick={() => { return changeActiveImage(numb); }}
-      isActive={isActive}
-    >
+    <SubImage>
       <img
         data-key={numb}
         src={image}
